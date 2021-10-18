@@ -120,4 +120,14 @@ footer{
 
 .link-rodape:hover{
     color: rgb(255, 255, 255);
+    
+}
+
+@media(max-width: 750px){
+    .button{
+        display: none;
+    }
+    .title1{
+        margin-top: 20px;
+    }
 }
