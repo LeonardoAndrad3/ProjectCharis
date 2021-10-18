@@ -1,0 +1,123 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* o topo representa a parte superior do site */
+.main{
+    background-image: linear-gradient( rgba(255, 255, 255, 0.8) 0%,rgba(255,255,255,.8) 100%), url(../icon/fundo.jpg);
+}
+.topo{ 
+    background-color: rgb(79, 79, 79);
+    width: auto;
+    height: 56px;
+    display: flex;
+    position: relative;
+
+}
+.navbar-dark{
+    background-color:  rgb(79, 79, 79);
+
+}
+.container-fluid{
+    color: white;
+}
+.offcanvas{
+    background-color: rgb(79, 79, 79);
+}
+
+/* Inicio parte principal */
+.button{
+    display: flex;
+    /* border: red solid 1px; */
+    justify-content: right;
+    position: relative;
+    top: 40px;
+    margin-right: 1em;
+
+}
+.contente{
+    margin: 0 auto;
+    width: 100%;
+    /* border: red solid 1px; */
+    height: auto;
+}
+.contente p, h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.btn-secondary{
+    background-color: black;
+    border-radius: 20px;
+}
+.title1{
+    text-align: center;
+}
+
+.title1 h1{
+    font-weight: normal;
+    font-size: 25px;
+    height: 20px;
+}
+.title1 p{
+    font-weight: normal;
+    font-size: 18px;
+}
+.title2{
+    text-align: center;
+    margin: 1em;
+}
+.title2 h1{
+    font-weight: normal;
+    font-size: 25px;
+    height: 20px;
+}
+.title2 p{
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.linha{
+    margin: 0px auto;
+    width: 400px;
+    border: black solid 1px;
+}
+
+.carousel{
+    margin: 2px auto;
+    width: 350px;
+    height: 300px;
+}
+
+.d-block{
+    width: 200px;
+    height: 280px;
+}
+
+/* Inicio rodapé */
+
+.rodape{
+    background-color: rgb(79, 79, 79);
+    padding: 20px;
+    /* border: red solid 1px; */
+    width: 100%;
+    height: auto;
+}
+
+footer{
+    color: white;
+}
+
+.rod{
+    list-style: none;
+    text-align: center;
+}
+
+.link-rodape{
+    text-decoration: none;
+    color: white;
+}
+
+.link-rodape:hover{
+    color: rgb(255, 255, 255);
+}
