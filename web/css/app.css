@@ -76,19 +76,55 @@
     font-weight: normal;
     font-size: 18px;
 }
-
 .linha{
     margin: 0px auto;
-    width: 400px;
+    width: 20%;
     border: black solid 1px;
 }
-
-.carousel{
+.carouselCharis{
     margin: 2px auto;
     width: 350px;
     height: 300px;
 }
-
+.carouselCharisFirst{
+    position: relative;
+    top: -260px;
+    left: 40px;
+    margin-left: 2em;
+    width: 150px; 
+    height: 0px;
+}
+.carouselCharisFirst img{
+    width: 80px;
+    height: 150px;
+    border-radius: 50%;
+}
+.carouselTopSecond{
+    position: relative;
+    top: -40px;
+    margin-left: 8em auto;
+}
+.carouselTopSecond h5{
+    position: relative;
+    left: -47px;
+    text-align: center;
+    margin: auto;
+    width: 250px;
+    color: rgb(255, 255, 255); 
+    font-weight: 900;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px 20px 0px 0px;
+}
+.carouselTopSecond p{
+    position: relative;
+    left: -47px;
+    text-align: center;
+    width: 250px;
+    margin: auto;
+    color: rgb(255, 255, 255); 
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 0px 0px 20px 20px;
+}
 .d-block{
     width: 200px;
     height: 280px;
@@ -98,22 +134,30 @@
 
 .rodape{
     background-color: rgb(79, 79, 79);
-    padding: 20px;
-    /* border: red solid 1px; */
+    padding-top: 20px;
+    /* border: red solid 1px;  */
     width: 100%;
     height: auto;
 }
 
 footer{
     color: white;
-}
-
-.rod{
     list-style: none;
     text-align: center;
 }
 
-.link-rodape{
+.rod{
+    position: relative;
+    list-style: none;
+    text-align: center;
+    left: -15px;
+    margin-bottom: -20px;
+}
+.rod p{
+    margin: -2px;
+}
+
+.link-rodape{ 
     text-decoration: none;
     color: white;
 }
@@ -130,4 +174,12 @@ footer{
     .title1{
         margin-top: 20px;
     }
+}
+@media(max-width: 450px){
+    .carousel{
+        margin: 2px auto;
+        width: 80%;
+        height: 350px;
+    }
+
 }
