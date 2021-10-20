@@ -176,9 +176,8 @@ footer{
 @media(max-width: 450px){
     .carouselCharis{
         width: 80%;
-        margin: auto;
+        margin: 1em auto;
         height: auto;
-        margin: 2em;
 
     }
 }
