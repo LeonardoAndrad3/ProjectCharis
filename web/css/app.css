@@ -174,10 +174,11 @@ footer{
     }
 }
 @media(max-width: 450px){
-    .carousel{
-        margin: 2px auto;
+    .carouselCharis{
         width: 80%;
-        height: 350px;
-    }
+        margin: auto;
+        height: auto;
+        margin: 2em;
 
+    }
 }
