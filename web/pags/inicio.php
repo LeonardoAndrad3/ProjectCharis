@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/app.css">
     <title>Charis</title>
 </head>
 <body>
@@ -28,7 +25,7 @@
                   <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
+                  <a class="nav-link" href="?pagina=agendamento">Agendamento</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -134,13 +131,20 @@
               </div>
             </section>
         </div>
-      <div class="rodape">
+        <div class="rodape">
         <footer>
-          <ul class="rod">
-            <li><p class="copy">Copyright © 2021 Charis</p></li>
+            <div class="redeSocial">
+            <a href="https://www.facebook.com/chariscabeloeestetica"><img class="iconFace" src="icon/facebook-f-logo-2019.png" alt="img"></a>
+            <a href="https://www.instagram.com/chariscabeloeestetica/"><img class="iconInsta" src="icon/instagram.png" alt="img"></a>
+            <a href="https://wa.me/55011964824192"><img class="iconZap" src="icon/whatsapp.png" alt="img"></a>
+
+            </div>
+            <ul class="rod">
             <li><a class="link-rodape" href="">Termos e condições</a></li>
             <li><p>Email: leonardoxcontato@gmail.com</p></li>
-            <li><p>Desenvolvido por: Leonardo Andrade</p></li>
+            <li><p>Desenvolvido por: Leonardo Andrade</p></li>  
+            <br> 
+            <li><p class="copy">Copyright © 2021 Charis</p></li>
           </ul>
         </footer>
       </div>
