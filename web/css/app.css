@@ -233,67 +233,6 @@ footer{
 }
 @media(max-width: 450px){
 
-footer{
-    color: white;
-    list-style: none;
-    text-align: left;
-    margin-left: 5px;
-}
-
-.rod{
-    font-size: 15px;
-    position: relative;
-    list-style: none;
-    left: -15px;
-    margin-bottom: -20px;
-}
-
-.rod li{
-    margin: -8px;
-}
-
-.link-rodape{ 
-    text-decoration: none;
-    color: white;
-}
-
-.link-rodape:hover{
-    color: rgb(255, 255, 255);
-    
-}
-
-.redeSocial{
-    margin-bottom: 10px;
-    margin-left: 80px;
-}
-
-.iconFace{
-    width: 40px;
-    height: 40px;
-    transition: 0.8s;
-}
-.iconInsta{
-    width: 58px;
-    height: 58px;
-    transition: 0.8s;
-}
-.iconZap{
-    width: 45px;
-    height: 45px;
-    transition: 0.8s;
-}
-
-.redeSocial a{
-    transition: 0.5s;
-}
-
-.redeSocial a:hover{
-    position: relative;
-    animation: up 0.2s;
-    animation-fill-mode: forwards;
-    filter: brightness(60%);
-    transition: 0.2s;
-}
     .carouselCharis{
         width: 80%;
         margin: 1em auto;
