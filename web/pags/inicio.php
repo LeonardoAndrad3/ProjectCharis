@@ -136,7 +136,7 @@
             <div class="redeSocial">
             <a href="https://www.facebook.com/chariscabeloeestetica"><img class="iconFace" src="icon/facebook-f-logo-2019.png" alt="img"></a>
             <a href="https://www.instagram.com/chariscabeloeestetica/"><img class="iconInsta" src="icon/instagram.png" alt="img"></a>
-            <a href="https://wa.me/55011964824192"><img class="iconZap" src="icon/whatsapp.png" alt="img"></a>
+            <a href="https://wa.me/55011964824193"><img class="iconZap" src="icon/whatsapp.png" alt="img"></a>
 
             </div>
             <ul class="rod">
