@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charis</title>
+    
 </head>
 <body>
     <div class="main">
@@ -137,17 +138,29 @@
             <a href="https://www.facebook.com/chariscabeloeestetica"><img class="iconFace" src="icon/facebook-f-logo-2019.png" alt="img"></a>
             <a href="https://www.instagram.com/chariscabeloeestetica/"><img class="iconInsta" src="icon/instagram.png" alt="img"></a>
             <a href="https://wa.me/55011964824193"><img class="iconZap" src="icon/whatsapp.png" alt="img"></a>
-
             </div>
             <ul class="rod">
-            <li><a class="link-rodape" href="">Termos e condições</a></li>
-            <li><p>Email: leonardoxcontato@gmail.com</p></li>
-            <li><p>Desenvolvido por: Leonardo Andrade</p></li>  
-            <br> 
-            <li><p class="copy">Copyright © 2021 Charis</p></li>
-          </ul>
+              <li><p>Email: leonardoxcontato@gmail.com</p></li>  
+              <li><p class="copy">Copyright © 2021 Charis</p></li>
+              <li><a class="link-rodape" href="">Termos e condições</a></li>
+              </br>     
+              <li><p>Rua Romualdo de Sousa Brito, 403</p></li>
+            </ul>        
+            <section class="conteudo-localizacao">
+              <iframe
+                width="250"
+                height="250"
+                loading="lazy"
+                allowfullscreen
+                class="maps"
+                src="">
+              </iframe> 
+            </section>
+          </div>
         </footer>
       </div>
     </div>
+
+    <script type="text/javascript" src="js/localiza.js"></script>
 </body>
 </html>

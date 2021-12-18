@@ -128,7 +128,20 @@
     height: 280px;
 }
 
-/* Inicio rodapé */
+/* Agendamento */
+
+.agendamento{
+    width: 70%;
+    height: 600px;
+    margin: 8px auto;
+    border: 1px solid red;
+}
+
+.agendamento h1{
+    text-align: center;
+}
+
+/* Rodapé */
 
 .rodape{
     background-color: rgb(79, 79, 79);
@@ -145,14 +158,15 @@ footer{
 }
 
 .rod{
+    font-size: 15px;
     position: relative;
     list-style: none;
-    text-align: center;
     left: -15px;
     margin-bottom: -20px;
 }
-.rod p{
-    margin: -2px;
+
+.rod li{
+    margin: -8px;
 }
 
 .link-rodape{ 
@@ -163,17 +177,6 @@ footer{
 .link-rodape:hover{
     color: rgb(255, 255, 255);
     
-}
-
-.agendamento{
-    width: 70%;
-    height: 600px;
-    margin: 8px auto;
-    border: 1px solid red;
-}
-
-.agendamento h1{
-    text-align: center;
 }
 
 .redeSocial{
@@ -208,6 +211,12 @@ footer{
     transition: 0.2s;
 }
 
+.maps{
+    margin-top: 15px;
+    width: 80%;
+    height: 320px;
+}
+
 @keyframes up{
     0%{top: 0px; transform: rotate(0deg);}
     50%{top: -2px; transform: rotate(15deg);}
@@ -223,6 +232,68 @@ footer{
     }
 }
 @media(max-width: 450px){
+
+footer{
+    color: white;
+    list-style: none;
+    text-align: left;
+    margin-left: 5px;
+}
+
+.rod{
+    font-size: 15px;
+    position: relative;
+    list-style: none;
+    left: -15px;
+    margin-bottom: -20px;
+}
+
+.rod li{
+    margin: -8px;
+}
+
+.link-rodape{ 
+    text-decoration: none;
+    color: white;
+}
+
+.link-rodape:hover{
+    color: rgb(255, 255, 255);
+    
+}
+
+.redeSocial{
+    margin-bottom: 10px;
+    margin-left: 80px;
+}
+
+.iconFace{
+    width: 40px;
+    height: 40px;
+    transition: 0.8s;
+}
+.iconInsta{
+    width: 58px;
+    height: 58px;
+    transition: 0.8s;
+}
+.iconZap{
+    width: 45px;
+    height: 45px;
+    transition: 0.8s;
+}
+
+.redeSocial a{
+    transition: 0.5s;
+}
+
+.redeSocial a:hover{
+    position: relative;
+    animation: up 0.2s;
+    animation-fill-mode: forwards;
+    filter: brightness(60%);
+    transition: 0.2s;
+}
     .carouselCharis{
         width: 80%;
         margin: 1em auto;
