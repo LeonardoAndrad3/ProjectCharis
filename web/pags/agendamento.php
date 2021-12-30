@@ -52,7 +52,7 @@
             <a href="https://wa.me/55011964824193"><img class="iconZap" src="icon/whatsapp.png" alt="img"></a>
             </div>
             <ul class="rod">
-              </br></br>
+              </br>
               <li><p class="copy">Copyright © 2021 Charis</p></li>
               <li><a class="link-rodape" href="">Termos e condições</a></li>
               </br>     
