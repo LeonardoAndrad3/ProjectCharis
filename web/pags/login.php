@@ -27,9 +27,6 @@
                 <li class="nav-item">
                   <a class="nav-link" href="?pagina=agendamento">Agendamento</a>
                 </li>
-                <li class="nav-item">
-                   <button type="button" onclick="window.location.href='?pagina=login'" class="btn btn-secondary">Login</button>
-                </li>
               </ul>
             </div>
           </div>
@@ -38,8 +35,7 @@
         
     <div class="agendamento">
 
-    <h1>Horários:</h1>
-
+    <h1>** login em Desenvolvimento! **<h1>
 
     </div>
 
