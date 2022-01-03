@@ -27,15 +27,16 @@
 }
 
 /* Inicio parte principal */
-.button{
+/* .button{
     display: flex;
-    /* border: red solid 1px; */
+    border: red solid 1px;
     justify-content: right;
     position: relative;
     top: 40px;
     margin-right: 1em;
 
-}
+} */
+
 .contente{
     margin: 0 auto;
     width: 100%;
@@ -87,16 +88,14 @@
     height: 300px;
 }
 .carouselCharisFirst{
+    margin: 8em auto;
     position: relative;
-    top: -260px;
-    margin-left: 4em;
-    margin: auto;
-    width: 150px; 
-    height: 0px;
+    display: block;
+    width: 230px; 
 }
 .carouselCharisFirst img{
     width: 80px;
-    height: 150px;
+    height: 210px;
     border-radius: 50%;
 }
 .carouselTopSecond{
@@ -104,10 +103,10 @@
 }
 .carouselTopSecond h5{
     position: relative;
-    left: -47px;
+    top: -25px;
     text-align: center;
-    margin: auto;
-    width: 250px;
+    margin: 0;
+    width: auto;
     color: rgb(255, 255, 255); 
     font-weight: 900;
     background-color: rgba(0, 0, 0, 0.7);
@@ -115,15 +114,21 @@
 }
 .carouselTopSecond p{
     position: relative;
-    left: -47px;
+    top: -25px;
     text-align: center;
-    width: 250px;
-    margin: auto;
+    width: auto;
+    margin: 0;
     color: rgb(255, 255, 255); 
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 0px 0px 20px 20px;
 }
-.d-block{
+.perfil{
+    height: auto;
+}
+.fundoPerfil{
+    position: absolute;
+}
+.fotoServico{
     width: 200px;
     height: 280px;
 }
@@ -134,11 +139,21 @@
     width: 70%;
     height: 600px;
     margin: 8px auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .agendamento h1{
     text-align: center;
+}
+
+/* blog */
+
+.blog{
+    /* border: red solid 1px; */
+    text-align: center;
+    margin-top: 1em;
+    margin-inline: 15%;
+    height: 650px
 }
 
 /* Rodapé */
@@ -223,12 +238,20 @@ footer{
     100%{top: -5px; transform: rotate(0deg);}
 }
 
-@media(max-width: 700px){
+@media(max-width: 1000px){
     .title1{
         margin-top: 20px;
     }
+
+    /* carrousel */
+
     .carouselCharisFirst{
         margin: auto;
+    }
+    .carouselCharisFirst{
+        margin: auto;
+        display: block;
+        width: 230px; 
     }
 }
 @media(max-width: 450px){

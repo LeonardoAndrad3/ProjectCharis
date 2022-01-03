@@ -27,6 +27,12 @@
                 <li class="nav-item">
                   <a class="nav-link" href="?pagina=agendamento">Agendamento</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="?pagina=blog">Blog</a>
+                </li>
+                <li class="nav-item">
+                   <button type="button" onclick="window.location.href='?pagina=login'" class="btn btn-secondary">Login</button>
+                </li>
               </ul>
             </div>
           </div>

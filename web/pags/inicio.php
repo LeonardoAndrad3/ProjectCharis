@@ -29,6 +29,9 @@
                   <a class="nav-link" href="?pagina=agendamento">Agendamento</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="?pagina=blog">Blog</a>
+                </li>
+                <li class="nav-item">
                    <button type="button" onclick="window.location.href='?pagina=login'" class="btn btn-secondary">Login</button>
                 </li>
               </ul>
@@ -43,24 +46,24 @@
             <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to="2" aria-label="Slide 3"></button>
           </div>
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="icon/cabeleireiro.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-item perfil active">
+              <img src="icon/cabeleireiro.jpg" class="d-block fundoPerfil w-100" alt="...">
               <div class="carouselCharisFirst">
                 <img src="icon/ivana.jpg" class="d-block w-100" alt="...">
                 <h5>Ivana Nascimento</h5>
                 <p>cabeleireira/estética</p>
               </div>
             </div>
-            <div class="carousel-item textCarouselTop">
-              <img src="icon/images.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-item perfil textCarouselTop">
+              <img src="icon/images.jpg" class="d-block fundoPerfil w-100" alt="...">
               <div class="carouselCharisFirst">
                 <img src="icon/mari.jpg" class="d-block w-100" alt="...">
                 <h5>Mariana Andrade</h5>
                 <p>Manicure</p>
               </div>          
             </div>
-            <div class="carousel-item">
-              <img src="icon/papervitor.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-item perfil ">
+              <img src="icon/papervitor.jpg" class="d-block fundoPerfil w-100" alt="...">
               <div class="carouselCharisFirst">
                 <img src="icon/victor.jpg" class="d-block w-100" alt="...">
                   <h5>Victor Nascimento</h5>
@@ -81,10 +84,10 @@
               <div id="carouselExampleIndicators" class="carousel slide carouselCharis" data-bs-interval="false">
                   <div class="carousel-inner">
                   <div class="carousel-item active">
-                      <img src="icon/f1.jpg" class="d-block w-100" alt="...">
+                      <img src="icon/f1.jpg" class="d-block fotoServico w-100" alt="...">
                   </div>
                   <div class="carousel-item">
-                      <img src="icon/f2.jpg" class="d-block w-100" alt="...">
+                      <img src="icon/f2.jpg" class="d-block fotoServico w-100" alt="...">
                   </div>
                   </div>
                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -105,10 +108,10 @@
             <div id="carouselExampleIndicators2" class="carousel slide carouselCharis" data-bs-interval="false"> 
                 <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="icon/m1.jpg" class="d-block w-100" alt="...">
+                    <img src="icon/m1.jpg" class="d-block fotoServico w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="icon/m2.jpg" class="d-block w-100" alt="...">
+                    <img src="icon/m2.jpg" class="d-block fotoServico w-100" alt="...">
                 </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
