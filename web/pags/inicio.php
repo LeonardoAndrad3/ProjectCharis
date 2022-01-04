@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charis</title>
-    
+    <title>Charis</title>    
 </head>
 <body>
     <div class="main">
@@ -154,6 +153,39 @@
       </div>
     </div>
 
-    <script type="text/javascript" src="js/localiza.js"></script>
+  <div id="desenvolvimento" value="1" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div id="modal-container" class="modal-container">
+        <div class="modal" style="border-color: red;">
+            <h3>Deseja encerrar a sessão?</h3>
+            <p>Ao clicar abaixo você desconectará de sua conta.</p>
+        </div>
+    </div>
+
+  <script>
+    function iniciaModal(){
+      $("#desenvolvimento").modal({
+        show: true
+      });
+    }
+    iniciaModal();
+  </script>
+  <script type="text/javascript" src="js/localiza.js"></script>
 </body>
 </html>
