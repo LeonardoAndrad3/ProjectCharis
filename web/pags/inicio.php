@@ -153,7 +153,7 @@
       </div>
     </div>
 
-  <div id="desenvolvimento" value="1" class="modal" tabindex="-1">
+  <div id="desenvolvimento" class="modal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -171,20 +171,10 @@
   </div>
 </div>
 
-    <div id="modal-container" class="modal-container">
-        <div class="modal" style="border-color: red;">
-            <h3>Deseja encerrar a sessão?</h3>
-            <p>Ao clicar abaixo você desconectará de sua conta.</p>
-        </div>
-    </div>
-
-  <script>
-    function iniciaModal(){
-      $("#desenvolvimento").modal({
-        show: true
-      });
-    }
-    iniciaModal();
+  <script type="text/javascript">
+      $(window).on('load', function(){
+      $('#desenvolvimento').modal('show')
+      })
   </script>
   <script type="text/javascript" src="js/localiza.js"></script>
 </body>
