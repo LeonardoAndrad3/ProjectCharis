@@ -51,11 +51,11 @@
               <div class="carouselCharisFirst">
                 <img src="icon/ivana.jpg" class="d-block w-100" alt="...">
                 <h5>Ivana Nascimento</h5>
-                <p>cabeleireira/estética</p>
+                <p>cabeleireira & estética</p>
               </div>
             </div>
             <div class="carousel-item perfil textCarouselTop">
-              <img src="icon/images.jpg" class="d-block fundoPerfil w-100" alt="...">
+              <img src="icon/fundoMari.jpg" class="d-block fundoPerfil w-100" alt="...">
               <div class="carouselCharisFirst">
                 <img src="icon/mari.jpg" class="d-block w-100" alt="...">
                 <h5>Mariana Andrade</h5>

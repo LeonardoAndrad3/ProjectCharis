@@ -41,11 +41,9 @@
         
     <div class="agendamento">
 
-    <h1>Horários:</h1>
-
+    <h1>Horários:</h1> 
 
     </div>
-
 
       <div class="rodape">
       <footer>
