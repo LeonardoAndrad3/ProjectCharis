@@ -1,6 +1,7 @@
 * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 
 /* o topo representa a parte superior do site */
@@ -27,6 +28,35 @@
 }
 
 /* Inicio parte principal */
+
+.iconCharis{
+    margin: 0;
+    border-radius: 50%;
+    width: auto;
+    height: 45px; 
+}
+
+.iconCharisMenu{
+    border-radius: 50%;
+    width: auto;
+    height: 120px; 
+}
+
+.iconSalao{
+    width: 80%;
+    height: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: solid 1px black
+}
+.linhaMenu{
+    margin: 0 auto;
+    border: solid 1px rgb(99, 99, 99);
+    width: 60%
+}
+
+
+
 /* .button{
     display: flex;
     border: red solid 1px;
@@ -154,9 +184,9 @@
 /* Agendamento */
 
 .agendamento{
-    width: 70%;
-    height: 600px;
-    margin: 8px auto;
+    width: 100%;
+    display: block;
+    height: 650px;
     /* border: 1px solid red; */
 }
 
@@ -164,6 +194,81 @@
     text-align: center;
 }
 
+.formAgendamento{    
+    background-color: rgb(208, 208, 208);
+    border-radius: 10px;
+    margin: auto;
+    width: 350px;
+    height: auto;
+    display: block;
+    text-align: center;
+}
+.formAgendamento input[type=submit]{
+    border-radius: 10px;
+    width: 80px;
+    border: none;
+    margin-bottom: 8px;
+}
+.formAgendamento input[type=submit]:hover{
+    transition: 0.2s;
+    background-color: rgb(174, 174, 174);
+}
+
+.formInput{
+    height: 85%;
+    display: block;
+    padding: 8px;
+}
+.formInput input{
+    border: none;
+    padding-left: 5px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    width: 94%;
+    height: 25px;
+}
+.formInput input:focus{
+    outline: solid 1px rgb(75, 75, 75);
+}
+
+.calendario{
+    margin: 1px auto;
+    width: 300px;
+    height: auto; 
+}
+.calendario h2{
+    text-align: center;
+}
+.semana{
+    display: flex;
+    text-align: center;
+}
+.semana div{
+    width: 100%;
+    height: 20px;
+}
+.dias{
+    display: flex;
+}
+.dias button{
+    text-decoration: none;
+    background-color: rgb(252, 252, 158);
+    border: 0px;
+    color: black;
+    height: 100%;
+    width: 100%;
+}
+
+.dias button:hover{
+    background-color: rgb(242, 242, 100);
+}
+.dias div{
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid;
+    height: 30px;
+}
 /* blog */
 
 .blog{
@@ -213,7 +318,10 @@ footer{
 }
 
 .redeSocial{
+    display: flex;
     margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 .iconFace{
@@ -316,14 +424,13 @@ footer{
         margin-top: 1em;
         position: relative;
         display: block;
-        width: 50%; 
+        width: 210px; 
         height: auto;
     }
     .carouselCharisFirst img{
         width: 80px;
         height: 180px;
         border-radius: 50%;
-
     }
     .carouselTopSecond{
         height: auto;
@@ -362,5 +469,16 @@ footer{
         width: 80%;
         height: 450px;
         margin: 8px auto;
+    }
+
+    @media(max-width: 220px){
+        .carouselCharisFirst{
+            margin-bottom: 1em;
+            margin-top: 1em;
+            position: relative;
+            display: block;
+            width: 90%; 
+            height: auto;
+        }
     }
 }

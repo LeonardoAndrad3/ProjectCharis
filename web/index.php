@@ -16,11 +16,14 @@
             $url = (isset($_GET['pagina'])) ? $_GET['pagina'] : 'inicio';
             $dir = 'pags/';
             $ext = '.php';
+            $extHtml = '.html';
 
             if(file_exists($dir.$url.$ext)){
                 include($dir.$url.$ext);
-            } else{
-                echo '<div class="alert alert-danger" role="alert"> Página não encontrada</div>';
+            } elseif (file_exists($dir.$url.$extHtml)){
+              include($dir.$url.$extHtml);
+            }else{
+              echo '<div class="alert alert-danger" role="alert"> Página não encontrada</div>';
             }
         ?>
 
