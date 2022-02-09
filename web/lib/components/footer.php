@@ -7,12 +7,7 @@
         <a href="https://wa.me/55011964824193"><img class="iconZap" src="icon/whatsapp.png" alt="img"></a>
         </div>  
         
-        <ul class="rod">
-            </br>
-            <li><p class="copy">Copyright © 2021 Charis</p></li>
-            <li><a class="link-rodape" href="">Termos e condições</a></li>
-            </br>     
-        </ul>         
+           
         <img class="iconSalao" src="icon/salao.png" alt="">
         <section class="conteudo-localizacao">
             <iframe
@@ -24,7 +19,16 @@
             src="">
             </iframe> 
         </section>
-        </div>
+        <ul class="rod">
+            </br>
+            <li><p class="copy">Copyright © 2021 Charis</p></li>
+            <li><a class="link-rodape" href="">Termos e condições</a></li>
+            </br>     
+        </ul>    
+        </div>  
+        
     </footer>
     </div>
 </div>
+
+<script type="text/javascript" src="js/localiza.js"></script>

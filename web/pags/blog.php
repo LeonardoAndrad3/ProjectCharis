@@ -8,14 +8,15 @@
 </head>
 <body>
 <div class="main">
-      <?php include("lib/components/header.php")?>
+    <?php 
+    include("lib/components/header.php")?>
         
-    <div class="mainLogin">
+    <div class="blog">
 
-    <h1>** login em Desenvolvimento! **<h1>
+    <h1>Ivana blog</h1>
+
 
     </div>
-
 
     <?php include("lib/components/footer.php")?>
 </body>
