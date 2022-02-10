@@ -8,12 +8,11 @@
 </head>
 <body>
     <div class="main">
-      <?php include("lib/components/header.php");include("lib/components/carrossel.php")?>
+      <?php include("lib/components/carrossel.php")?>
 
   
       <!-- Utilizando imagem do charis -->
-      <?php include("lib/components/contentInicio.php");include("lib/components/footer.php")?>
-
+      <?php include("lib/components/contentInicio.php")?>
 
   <!-- modal -->
   <div id="desenvolvimento" class="modal" tabindex="-1">

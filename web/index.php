@@ -12,6 +12,7 @@
     <title>Charis</title>
   </head>
   <body>
+    
         <?php
             $url = (isset($_GET['pagina'])) ? $_GET['pagina'] : 'inicio';
             $dir = 'pags/';
@@ -19,9 +20,9 @@
             $extHtml = '.html';
 
             if(file_exists($dir.$url.$ext)){
-                include($dir.$url.$ext);
-            } elseif (file_exists($dir.$url.$extHtml)){
-              include($dir.$url.$extHtml);
+                include("lib/components/header.php");
+                include($dir.$url.$ext);          
+                include("lib/components/footer.php");
             }else{
               echo '<div class="alert alert-danger" role="alert"> Página não encontrada</div>';
             }

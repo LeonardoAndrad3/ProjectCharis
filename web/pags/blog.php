@@ -8,8 +8,6 @@
 </head>
 <body>
 <div class="main">
-    <?php 
-    include("lib/components/header.php")?>
         
     <div class="blog">
 
@@ -17,7 +15,5 @@
 
 
     </div>
-
-    <?php include("lib/components/footer.php")?>
 </body>
 </html>
