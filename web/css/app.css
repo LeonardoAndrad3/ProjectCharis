@@ -6,25 +6,21 @@
 
 /* o topo representa a parte superior do site */
 .main{
-    background-image: linear-gradient( rgba(255, 255, 255, 0.8) 0%,rgba(255,255,255,.8) 100%), url(../icon/fundo.jpg);
+    background-image: linear-gradient( rgba(255, 255, 255, 0.8) 0%,rgba(255,255,255,.8) 100%);
 }
 .topo{ 
-    background-color: rgb(79, 79, 79);
     width: auto;
     height: 56px;
     display: flex;
-    position: relative;
-
 }
 .navbar-dark{
-    background-color:  rgb(79, 79, 79);
-
+    background-color:#30151e;
 }
 .container-fluid{
     color: white;
 }
 .offcanvas{
-    background-color: rgb(79, 79, 79);
+    background-color: #30151e;
 }
 
 /* Inicio parte principal */
@@ -41,21 +37,6 @@
     width: auto;
     height: 120px; 
 }
-
-.iconSalao{
-    width: 80%;
-    height: 100%;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    border: solid 1px black
-}
-.linhaMenu{
-    margin: 0 auto;
-    border: solid 1px rgb(99, 99, 99);
-    width: 60%
-}
-
-
 
 /* .button{
     display: flex;
@@ -86,9 +67,15 @@
     background-color: rgba(116, 116, 116, 0.2);
 }
 .title1{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: 100%;
+    margin: 2em 0 0 0; 
     text-align: center;
+    align-items: center;
 }
-
 .title1 h1{
     font-weight: normal;
     font-size: 25px;
@@ -98,28 +85,39 @@
     font-weight: normal;
     font-size: 18px;
 }
-.title2{
+.title1 img{
+    height: auto;
+    width: 40vw;
+    min-width: 350px;
+}
+.sobre{
+    position: relative;
+    display: flex;
+    background-color: #E4B5B5;
+    text-align: justify;
+    justify-content: center;
+}
+.sobre div{
+    background-image: url('../icon/Rectangle.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 3em;
+    max-width: 900px;
+}
+.sobre h2{
     text-align: center;
-    margin: 0em;
 }
-.title2 h1{
-    font-weight: normal;
-    font-size: 25px;
-    height: 20px;
-}
-.title2 p{
-    font-weight: normal;
-    font-size: 18px;
-}
-.linha{
-    margin: 1em auto;
-    width: 20%;
-    border: black solid 1px;
-}
-.carouselCharis{
-    margin: 2px auto;
+.sobre img{
+    position: relative;
+    top: -40px;
     width: 350px;
-    height: 300px;
+}
+
+.carouselCharis{
+    margin: 1em auto;
+    width: 350px;
+    height: auto;
+    border: solid;
 }
 /* .carouselCharisFirst{
     margin: 8em auto;
@@ -128,6 +126,7 @@
     width: 210px; 
     border: solid red;
 } */
+
 .carouselCharisFirst{
     margin-bottom: 1em;
     margin-top: 1em;
@@ -136,10 +135,11 @@
     display: block;
     width: 250px; 
     height: auto;
+    
 }
 .carouselCharisFirst img{
-    width: 80px;
-    height: 210px;
+    width: auto;
+    height: 230px;
     border-radius: 50%;
     border: solid 1px rgba(0, 0, 0, 0.337);
 }
@@ -184,13 +184,40 @@
     height: 280px;
     border-radius: 10%;
 }
+.topPage{
+    position: fixed;
+    background-image: url('../icon/Group.png');
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    max-height: 850px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+}
+.profissinais{
+    position: relative;
+    height: 650px;
+    background-color: white;
+}
+.profissinais h1{
+    text-align: center;
+}
+.carrouselProfissional{
+
+}
+
 
 /* Agendamento */
 
 .agendamento{
+    padding: 10px;
     width: 100%;
-    display: block;
+    display: flex;
     height: auto;
+    min-height: 650px;
+    justify-content: center;
+    align-items: center;
 }
 
 .agendamento h1{
@@ -198,20 +225,22 @@
     font-weight:100;
 }
 
-.formAgendamento{   
-    border: 1px solid red; 
-    background-color: rgb(208, 208, 208);
+.formAgendamento{
+    background-color: #d9c1c5;
     border-radius: 10px;
-    margin: auto;
-    margin-bottom: 5em;
-    width: 350px;
-    height: auto;
-    display: block;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    min-height: 450px;
+    max-width: 900px;
 }
+
 .formAgendamento input[type=submit]{
     border-radius: 10px;
     width: 80px;
+    height: 30px;
     border: none;
     margin-bottom: 8px;
 }
@@ -220,68 +249,48 @@
     background-color: rgb(174, 174, 174);
 }
 
-.formInput{
-    height: 85%;
-    display: block;
-    padding: 8px;
-}
 .formInput input{
     border: none;
     padding-left: 5px;
     border-radius: 10px;
-    margin-bottom: 5px;
-    width: 94%;
-    height: 25px;
+    margin-bottom: 8px;
+    width: 80%;
+    height: 40px;
 }
-.formInput input:focus{
+.formAgendamento input:focus{
     outline: solid 1px rgb(75, 75, 75);
 }
+.formMain{
 
-.calendario{
-    margin: 1px auto;
-    width: 350px;
-    height: auto; 
-}
-.calendario h2{
-    text-align: center;
-}
-.semana{
     display: flex;
-    text-align: center;
-}
-.semana div{
-    width: 100%;
-    height: 20px;
-}
-.dias{
-    display: flex;
-}
-.dias button{
-    text-decoration: none;
-    background-color: rgb(252, 252, 158);
-    border: 0px;
-    color: black;
+    align-items: center;
     height: 100%;
-    width: 100%;
+    min-height: 350px;
+}
+.formInput{
+    display: flex;
+    flex-direction: column;
+    height:50%;
+    width: 55%;
+    align-items: center;
+}
+.formImg{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+.iconAgenda{
+    width: auto;
+    height: auto;
+    max-width: 250px;
 }
 
-.dias button:hover{
-    background-color: rgb(242, 242, 100);
-}
-.dias div{
-    text-align: center;
-    justify-content: center;
-    width: 100%;
-    border: 1px solid;
-    height: 30px;
-}
 /* blog */
 
 .blog{
     /* border: red solid 1px; */
+    padding: 10px 0 0 0;
     text-align: center;
-    margin-top: 1em;
-    margin-inline: 15%;
     height: 650px
 }
 
@@ -300,7 +309,8 @@
 /* Rodapé */
 
 .rodape{
-    background-color: rgb(104, 104, 104);
+    position: relative;
+    background-color: #30151e;
     padding-top: 20px;
     /* border: red solid 1px;  */
     width: 100%;
@@ -332,7 +342,6 @@ footer{
 
 .link-rodape:hover{
     color: rgb(255, 255, 255);
-    
 }
 
 .redeSocial{
@@ -370,11 +379,39 @@ footer{
     transition: 0.2s;
 }
 
+.iconSalao{
+    width: 80%;
+    height: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: solid 1px black;
+    max-width:700px;
+}
 .maps{
     margin-top: 15px;
     width: 80%;
-    height: 320px;
+    height: 350px;
 }
+
+
+/* linhas && separadores  */
+.linha{
+    margin: 1em auto;
+    width: 20%;
+    border: black solid 1px;
+}
+.linhaMenu{
+    margin: 0 auto;
+    border: solid 1px rgb(99, 99, 99);
+    width: 60%
+}
+.linhaVertical{
+    height: 200px;
+    border: solid 1px #d0b2b7;
+}
+
+/* media && keyframes */
+
 
 @keyframes up{
     0%{top: 0px; transform: rotate(0deg);}
@@ -385,6 +422,7 @@ footer{
 @media(max-width: 1000px){
     .title1{
         margin-top: 20px;
+        
     }
     /* carrousel */
 
@@ -400,6 +438,38 @@ footer{
         height: auto;
     }
 }
+@media(max-width: 700px){
+    .formInput{
+        height: 100%;
+        width: 100%;
+    }
+    .formImg{
+        display: none;
+    }
+    .linhaVertical{
+        display: none;
+    }
+    .sobre{
+        flex-direction: column;
+        align-items: center;
+    }
+    .sobre img{
+        top: 10px;
+        width: 60%;
+        height: auto;
+    }
+    .title1{
+        flex-direction: column;
+    }
+    .title1 h1{
+        font-weight: 550;
+        font-size: 20px;
+    }
+    .title1 p{
+        font-weight: normal;
+        font-size: 16px;
+    }
+}
 @media(max-width: 450px){
     .title1{
         text-align: center;
@@ -412,18 +482,6 @@ footer{
     .title1 p{
         font-weight: normal;
         font-size: 14px;
-    }
-    .title2{
-        text-align: center;
-    }
-    .title2 h1{
-        font-weight: 550;
-        font-size: 18px;
-        height: 20px;
-    }
-    .title2 p{
-        font-weight: normal;
-        font-size: 18px;
     }
     .linha{
         margin: auto;

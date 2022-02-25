@@ -1,6 +1,4 @@
 <?php
-    include_once('dbConnect.php');
-    include_once('login.php');
-    
-
+    include_once('ControllerDB.php');
+    include_once('agendar.php');
 ?>

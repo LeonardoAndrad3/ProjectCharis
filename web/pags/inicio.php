@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charis</title>    
 </head>
-<body>
-    <div class="main">
-      <?php include("lib/components/carrossel.php")?>
+<body> 
+    <?php include_once("lib/components/top.php")?>
 
-  
+
+    <div class="main">
       <!-- Utilizando imagem do charis -->
-      <?php include("lib/components/contentInicio.php")?>
+      <?php include_once("lib/components/contentInicio.php")?>
 
   <!-- modal -->
   <div id="desenvolvimento" class="modal" tabindex="-1">
@@ -32,6 +32,16 @@
   <script type="text/javascript">
       $(window).on('load', function(){
       $('#desenvolvimento').modal('show')
+      })
+
+
+      $(window).scroll(()=>{
+        let scroll = $(window).scrollTop();        
+        if(scroll >= 600){
+            $("#topPage").fadeOut(500);
+        } else{
+          $("#topPage").fadeIn(500);
+        }
       })
   </script>
 </body>
