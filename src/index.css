@@ -1,12 +1,14 @@
 :root{
-  --color-background-one: #AB7282;
-  --color-background-two: #CBA5CE;
+  --color-background-one: #8b1e43;
+  --color-background-two: #a35356;
+  --color-background-three: #ff9ea0;
   --color-img-profile: #7D3F50;
+
+  --color-world-p: white;
 
 }
 
 body {
-
   overflow-y: visible;
   overflow-x: hidden;
   margin: 0;

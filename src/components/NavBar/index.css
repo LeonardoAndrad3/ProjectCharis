@@ -16,6 +16,7 @@
 }
 
 .colorLink a{
-    color: white;
+    color: var(--color-world-p);
     font-size: 24px;
+    font-weight: 500;
 }

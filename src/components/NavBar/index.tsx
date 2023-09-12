@@ -2,28 +2,17 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { Icons, Contact, Main } from './style';
-import faceIcon from "@/icons/faceIcon.png";
-import instaIcon from "@/icons/Instagram_icon.png";
-import whatsIcon from "@/icons/WhatsIcon.png";
+import { Icons, Main } from './style';
 import charisIcon from "@/icons/charisIcon.png"
 import "./index.css";
-import {useEffect, useState } from 'react';
 
 
 export default function OffcanvasExample() {
     let expand = "xxl";
-    const [show, setShow] = useState(true);
-
-    useEffect(()=>{
-      document.getElementById("btn")?.addEventListener("click", () => {
-        setShow(false);
-      })
-    })
 
   return (
     <Main>
-        <Navbar expand={expand} className="navbar navbar-expand-lg navbar-dark">
+        <Navbar expand={expand} className="navbar navbar-expand-lg navbar-light">
           <Container fluid id={"test"}>
             <Navbar.Brand href="#"><Icons className={"iconCharis"} src={charisIcon}></Icons>
             </Navbar.Brand>

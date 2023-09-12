@@ -1,14 +1,26 @@
 import styled from 'styled-components';
+import background from "@/icons/fundoSalao.jpg"
 
-export const Main = styled.main`
+export const Main = styled.div`
     width: 100%;
     height: 103vh;
     position: relative;
     top: -2em;
-    background-image:  
-    linear-gradient(to right,
+    /* linear-gradient(to right,
     var(--color-background-one), 
-    var(--color-background-two));
+    var(--color-background-two)); */
+    margin-bottom: 4em;
+`
+export const BackGround = styled.div`
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-image:  url(${background});
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(8px) brightness(20%);
+    backdrop-filter: brightness(100%);
 `
 
 export const Text = styled.p`
@@ -28,8 +40,8 @@ export const Title = styled.h1`
 `
 
 export const PhotoMain = styled.img`
-    width: 55%;
-    height: 95%;
+    width: 50%;
+    height: 90%;
     min-width: 300px;
     position: absolute;
     bottom: -1em;
@@ -64,16 +76,20 @@ export const PhotoMain = styled.img`
 `
 
 export const ContentFirst = styled.div`
-    width: 70%;
+    width: 80%;
     height: 74%;
     border-radius: 20px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -40%);
-    background-color: rgb(255,255,255,20%);
+    transform: translate(-40%, -40%);
+    /* background-color: rgb(255,255,255,50%); */
     color: white;
-    max-height: 1000px;
+    max-height: 900px;
+
+    @media (max-width: 1200px) {
+        transform: translate(-50%, -40%);
+    }
 `
 
 export const ContentTitle = styled.div`
@@ -83,7 +99,7 @@ export const ContentTitle = styled.div`
     right: 0px;
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: start;
     justify-content: center;
 
     @media (max-width: 1200px) {
@@ -111,5 +127,45 @@ export const BtnDiv = styled.div`
     }
 `
 
+export const PqDiv = styled.div`
+    display: grid;
+    grid-template-areas: 
+    "text text foto1 foto2";
+    grid-template-columns: 40% auto auto;
+    width: 100%;
+    height: auto;
+    gap: 2em;
+
+    @media (max-width: 1100px) {
+        grid-template-areas: 
+        "text text"
+        "foto1 foto2";
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+    }
+
+    @media (max-width: 580px) {
+        grid-template-areas: 
+        "text"
+        "foto1"
+        "foto2";
+        grid-template-columns: auto;
+    }
+
+    margin-bottom: 10em;
+    padding-right: 1em;
+`
+
+export const DivTitle = styled.div`
+    margin-left: 4em;
+    p{
+        text-align: justify;
+        font-size: 40px
+    }
+    h1{
+        text-align:center;
+        margin-bottom: 1em;
+    }
+`
 
 //export{}
