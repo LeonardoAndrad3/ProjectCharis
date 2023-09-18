@@ -32,7 +32,8 @@ export const DivText= styled.div`
     grid-area: divText;
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 1.5em;
+    text-align: justify;
 
     p{
         font-size: 24px;
@@ -46,7 +47,7 @@ export const DivText= styled.div`
 export const Button = styled.button`
     width: 60%;
     font-size: 25px;
-    height: 40px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;

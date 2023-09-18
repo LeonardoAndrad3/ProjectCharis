@@ -35,7 +35,7 @@ export const Title = styled.h1`
     font-size: 50px;
 
     @media (max-width: 1200px) {
-        font-size: 30px;
+        font-size: 40px;
     }
 `
 
@@ -128,13 +128,16 @@ export const BtnDiv = styled.div`
 `
 
 export const PqDiv = styled.div`
+    justify-content: center;
+    align-items: center;
     display: grid;
     grid-template-areas: 
     "text text foto1 foto2";
     grid-template-columns: 40% auto auto;
-    width: 100%;
+    width: 95%;
     height: auto;
     gap: 2em;
+    margin: auto;
 
     @media (max-width: 1100px) {
         grid-template-areas: 
@@ -152,20 +155,119 @@ export const PqDiv = styled.div`
         grid-template-columns: auto;
     }
 
-    margin-bottom: 10em;
-    padding-right: 1em;
+    margin-bottom: 5em;
 `
 
 export const DivTitle = styled.div`
-    margin-left: 4em;
+    grid-area: text;
+
+    @media (max-width: 1200px) {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+
     p{
         text-align: justify;
-        font-size: 40px
+        font-size: 30px;
+
+        @media (max-width: 600px) {
+            font-size: 8vw;
+        }
     }
     h1{
         text-align:center;
         margin-bottom: 1em;
+
+        @media (max-width: 600px) {
+            font-size: 8vw;
+        }
     }
 `
+
+// Div to Service on salon hair
+
+export const ServiceDiv = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+
+    h1{
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    margin-bottom: 10em; 
+
+`
+
+export const GridDiv = styled.div`
+    margin-bottom: 6em; 
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-rows: auto;
+    width: 80%;
+    height: 100%;
+    justify-content: space-between;
+    gap: 3em;
+
+    @media (max-width: 1400px) {
+        grid-template-columns: auto auto auto;
+    }
+`
+
+export const ItemGrid = styled.img`
+    width: 100px;
+
+    @media (max-width: 1400px) {
+        width: 15vw;
+    }
+
+    @media (max-width: 350px) {
+        width: 10vw;
+    }
+`
+
+
+// profissional of stetic
+
+export const ProfileDiv = styled.div`
+    display: grid;
+    grid-template-areas: 
+    "texto texto"
+    "ivana mari"
+    "victor mari";
+    justify-content: space-between;
+    align-items:center;    
+    gap: 2em;
+
+    p{
+        grid-area: texto;
+        align-items: center;
+    }
+
+    @media (max-width: 1000px) {
+        grid-template-areas: 
+        "texto"
+        "ivana"
+        "victor"
+        "mari";
+    }
+`
+
+export const MainProfile = styled.div`
+
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center; 
+    width: 95%;
+    margin: auto;
+
+`
+
 
 //export{}
