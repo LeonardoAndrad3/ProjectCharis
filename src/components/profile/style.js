@@ -21,8 +21,16 @@ export const IconProfile = styled.img`
         if(!props.sexo) return "#EBAFAF"
         else return "#AA8174"
     }};
-
     box-shadow: -10px 10px 10px -8px rgb(0,0,0,50%);
+
+    @media (max-width: 450px) {
+        margin-top: 1em;
+        top: 0px;
+        left: 0px;
+        width: 80%
+
+    }
+
 `
 export const ProfileDiv = styled.div`
     position: relative;
@@ -42,7 +50,15 @@ export const ProfileDiv = styled.div`
         justify-content: center;
         align-items: center;
         text-align: justify;
-        padding-right: 2em;
+        padding: 2em;
+    }
+
+    @media (max-width: 450px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
     
 `

@@ -1,10 +1,12 @@
-import {Text, Title, Main, PhotoMain, ContentTitle,ContentFirst, BtnDiv, BackGround, PqDiv, DivTitle, GridDiv, ItemGrid, ServiceDiv,ProfileDiv,MainProfile} from "./styled.js";
+import {Text, Title, Main, PhotoMain, ContentTitle,ContentFirst, BtnDiv, BackGround, PqDiv, DivTitle, GridDiv, ItemGrid, ServiceDiv,ProfileDiv,MainProfile, DivPhotos, PhotosGrid_1, PhotosGrid_2} from "./styled.js";
 import mulherMain from "@/icons/initContent/iconContentFirst.png"
 import iconHair from "@/icons/initContent/hairIcon.png"
 import "./index.css"
 import hairImg from "@/icons/hairImg.png"
 import ContentService from "@/components/ContentService";
 import Profile from "@/components/profile";
+import img1  from "@/icons/works/image 20.png"
+import img2  from "@/icons/works/image 21.png"
 
 
 export default function Home(){
@@ -111,6 +113,29 @@ export default function Home(){
 
                 </ProfileDiv>
             </MainProfile>
+
+
+            <DivPhotos>
+
+                <ul>    
+                    <li className="p1">
+                        <PhotosGrid_1 src={img1}/>
+                        <PhotosGrid_1 src={img1}/>
+                    </li>
+
+                    <li className="p2">
+                        <PhotosGrid_2 src={img1}/>
+                        <PhotosGrid_2 src={img1}/>
+                    </li>
+
+                    <li className="p3"> 
+                        <PhotosGrid_1 src={img1}/>
+                        <PhotosGrid_1 src={img1}/>
+                    </li> 
+            
+                </ul>
+
+            </DivPhotos>
    
 
 

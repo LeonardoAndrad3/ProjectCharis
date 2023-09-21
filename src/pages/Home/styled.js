@@ -269,5 +269,58 @@ export const MainProfile = styled.div`
 
 `
 
+//photos in service
+
+export const DivPhotos = styled.div`
+
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    margin-top: 5em;
+
+    ul{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-areas: "p1 p2 p3";
+        list-style: none;
+        padding-left: 0;
+        justify-content: space-between;
+
+        @media (max-width: 450px) {
+            grid-template-areas: 
+            "p1" 
+            "p2"
+            "p3";
+
+        }
+
+    }
+
+    li{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        gap: 1.5em;
+
+        @media (max-width: 450px) {
+            flex-direction: row;
+            gap: 10px;
+            padding: 0px;
+        }
+
+    }
+`
+
+export const PhotosGrid_1 = styled.img`
+    width: 95%;
+    height: 50%;
+`
+
+export const PhotosGrid_2 = styled(PhotosGrid_1)`
+
+`
+
 
 //export{}
