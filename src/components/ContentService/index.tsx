@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react"
 //import {View} from 'react-native';
 import {Main, DivImg, Img, DivText, Button} from './style'
-import f1 from "@/icons/f1.jpg"
-import f2 from "@/icons/f2.jpg"
+import f1 from "@icons/f1.jpg"
+import f2 from "@icons/f2.jpg"
 
 
 export default function ContentService(props: {gridArea: String}){

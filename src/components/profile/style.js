@@ -17,19 +17,28 @@ export const IconProfile = styled.img`
     left: 1em;
     border-radius: 50%;
     grid-area: foto;
-    background-color: ${props =>{
-        if(!props.sexo) return "#EBAFAF"
-        else return "#AA8174"
-    }};
+    background-color: ${props => props.color};
     box-shadow: -10px 10px 10px -8px rgb(0,0,0,50%);
 
-    @media (max-width: 450px) {
+    @media (max-width: 1200px) {
+        width: 50%;
+        top: 30px;
+    }
+
+    @media (max-width: 1000px) {
+        width: 100%;
+        top: -30%;
+    }
+
+    @media (max-width: 650px) {
         margin-top: 1em;
         top: 0px;
         left: 0px;
         width: 80%
 
     }
+
+
 
 `
 export const ProfileDiv = styled.div`
@@ -53,7 +62,19 @@ export const ProfileDiv = styled.div`
         padding: 2em;
     }
 
-    @media (max-width: 450px) {
+    @media (max-width: 1200px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    @media (max-width: 1000px) {
+        display: grid;
+    }
+
+    @media (max-width: 650px) {
         display: flex;
         flex-direction: column;
         justify-content: center;

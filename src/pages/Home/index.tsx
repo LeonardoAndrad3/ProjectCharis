@@ -1,19 +1,24 @@
 import {Text, Title, Main, PhotoMain, ContentTitle,ContentFirst, BtnDiv, BackGround, PqDiv, DivTitle, GridDiv, ItemGrid, ServiceDiv,ProfileDiv,MainProfile, DivPhotos, PhotosGrid_1, PhotosGrid_2} from "./styled.js";
-import mulherMain from "@/icons/initContent/iconContentFirst.png"
-import iconHair from "@/icons/initContent/hairIcon.png"
+import mulherMain from "@icons/initContent/iconContentFirst.png"
+import iconHair from "@icons/initContent/hairIcon.png"
 import "./index.css"
-import hairImg from "@/icons/hairImg.png"
-import ContentService from "@/components/ContentService";
-import Profile from "@/components/profile";
-import img1  from "@/icons/works/image 20.png"
-import img2  from "@/icons/works/image 21.png"
+import hairImg from "@icons/hairImg.png"
+import ContentService from "@components/ContentService"
+import Profile from "@components/Profile"
+import img1  from "@icons/works/image 20.png"
+import React from 'react';
+import work from "@icons/test.mp4"
 
 
 export default function Home(){
     return(
         <>
         <Main id="main">
-            <BackGround/>
+            <BackGround>
+                <video muted autoPlay loop>
+                    <source  src={work} type="video/mp4"/>
+                </video>
+            </BackGround>
             <ContentFirst>
                 <ContentTitle>
                     <Title> 
@@ -30,7 +35,7 @@ export default function Home(){
                 <img className={"iconContentFirst iconHair"} alt="iconBelo" src={iconHair} />
 
                 <BtnDiv className="btnDiv">
-                    <button type="button" className="btn btn-outline-light"><Text>Venha nos conhecer</Text></button>
+                    <button type="button" className="btn btn-outline-dark btnFirstContent"><Text>Venha nos conhecer</Text></button>
                     <div className="mainFlecha">
                         <div className="flecha"></div>
                     </div>
@@ -38,11 +43,12 @@ export default function Home(){
                
             </ContentFirst>
 
-
         </Main>
+
             {/* why to choosee us */}
             <PqDiv>
-                <DivTitle>
+                <DivTitle>     
+              
                     <Title> 
                         Por que nos escolher?
                     </Title>

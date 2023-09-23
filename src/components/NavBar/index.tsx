@@ -3,11 +3,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Icons, Main } from './style';
-import charisIcon from "@/icons/charisIcon.png"
+import charisIcon from "@icons/charisIcon.png"
 import "./index.css";
 
 
-export default function OffcanvasExample() {
+export default function NavBar() {
     let expand = "xxl";
 
   return (

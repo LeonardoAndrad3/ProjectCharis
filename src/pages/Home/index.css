@@ -10,7 +10,7 @@
     max-width: 300px;
 }
 
-.btn-outline-light{
+.btnFirstContent{
     position: absolute;
     top: 0%;
     right: 0%;
@@ -20,7 +20,7 @@
 
 }
 
-.btn-outline-light:hover{
+.btnFirstContent:hover{
     transition: 1s ease-in-out;
     animation: btnDown 1s ease-in-out;
    

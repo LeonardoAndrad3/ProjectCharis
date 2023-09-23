@@ -1,9 +1,8 @@
-import React from 'react';
 //import {View} from 'react-native';
 import {Main, IconProfile, ProfileDiv} from './style'
-import mari from "@/icons/mari.png"
-import ivana from "@/icons/initContent/iconContentFirst.png"
-import victor from "@/icons/victor.png"
+import mari from "@icons/mari.png"
+import ivana from "@icons/initContent/iconContentFirst.png"
+import victor from "@icons/victor.png"
 
 
 export default function Profile(props:{className:string, name:string, service: string, color: string, male:boolean}){
@@ -29,7 +28,7 @@ export default function Profile(props:{className:string, name:string, service: s
         <Main className={props.className}>
             <ProfileDiv color={props.color}>
 
-                    <IconProfile sexo={props.male} src={profile} alt="" />
+                    <IconProfile color={props.color} src={profile} alt="" />
                 
                 <div>
                     <h2>{props.name}</h2>

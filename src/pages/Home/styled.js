@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import background from "@/icons/fundoSalao.jpg"
+import background from "@icons/fundoSalao.jpg"
+import backgroundProfile from "@icons/teste.jpg"
 
 export const Main = styled.div`
     width: 100%;
@@ -15,12 +16,20 @@ export const BackGround = styled.div`
     position: absolute;
     top: 0px;
     width: 100%;
-    height: 100%;
+    height: 40%;
     background-image:  url(${background});
     background-repeat: no-repeat;
     background-size: cover;
-    filter: blur(8px) brightness(20%);
+    filter: blur(3px) brightness(50%);
     backdrop-filter: brightness(100%);
+    
+    video{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
 `
 
 export const Text = styled.p`
@@ -40,16 +49,16 @@ export const Title = styled.h1`
 `
 
 export const PhotoMain = styled.img`
-    width: 50%;
-    height: 90%;
+    width: 40%;
+    height: 80%;
     min-width: 300px;
     position: absolute;
-    bottom: -1em;
-    left: -18%;
+    bottom: 20%;
+    left: -15%;
     animation: profile 20s ease-in-out infinite;
     transition: all 1s ease-in-out;
     background-color: rgb(255,255,255,20%);
-    box-shadow: 1px 1px 120px -100px black;
+    box-shadow: 1px 1px 10px 1px rgb(0,0,0,20%);
 
     @keyframes profile {
         0%{
@@ -84,7 +93,7 @@ export const ContentFirst = styled.div`
     left: 50%;
     transform: translate(-40%, -40%);
     /* background-color: rgb(255,255,255,50%); */
-    color: white;
+    color: black;
     max-height: 900px;
 
     @media (max-width: 1200px) {
@@ -231,18 +240,39 @@ export const ItemGrid = styled.img`
     }
 `
 
-
 // profissional of stetic
 
+export const MainProfile = styled.div`
+
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+    background-image: url(${backgroundProfile});
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    h1{
+       color: white;
+       position: relative;
+       top: 2vw;
+    }
+
+
+`
+
 export const ProfileDiv = styled.div`
-    display: grid;
+    display: grid;  
+    width: 90%;
+    margin-bottom: 5em;
     grid-template-areas: 
     "texto texto"
     "ivana mari"
     "victor mari";
     justify-content: space-between;
     align-items:center;    
-    gap: 2em;
+    gap: 1em;
 
     p{
         grid-area: texto;
@@ -258,16 +288,7 @@ export const ProfileDiv = styled.div`
     }
 `
 
-export const MainProfile = styled.div`
 
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center; 
-    width: 95%;
-    margin: auto;
-
-`
 
 //photos in service
 
@@ -285,7 +306,6 @@ export const DivPhotos = styled.div`
         grid-template-areas: "p1 p2 p3";
         list-style: none;
         padding-left: 0;
-        justify-content: space-between;
 
         @media (max-width: 450px) {
             grid-template-areas: 
@@ -300,7 +320,9 @@ export const DivPhotos = styled.div`
     li{
         display: flex;
         flex-direction: column;
-        width: 100%;
+        justify-content: center;
+        align-items: center;
+        width: auto;
         height: auto;
         gap: 1.5em;
 
@@ -321,6 +343,5 @@ export const PhotosGrid_1 = styled.img`
 export const PhotosGrid_2 = styled(PhotosGrid_1)`
 
 `
-
 
 //export{}

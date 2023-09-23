@@ -1,8 +1,11 @@
-const {override, addWebpackAlias} = require("customize-cra")
-const path = require('path');
+const {alias} = require("react-app-rewire-alias")
 
-const rootImport = {
-    ['@']: path.resolve(__dirname, 'src')
+module.exports = function override(config){
+    alias({
+        '@components': "src/components",
+        "@icons": "src/icons",
+        "@/": "src/"
+    })(config);
+
+    return config;
 }
-
-module.exports = override(addWebpackAlias(rootImport))
