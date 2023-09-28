@@ -9,6 +9,7 @@ export const Main = styled.div`
 `
 
 export const IconProfile = styled.img`
+    transition: 500ms;
     width: 100%;
     height: auto;
     max-height: 500px;
@@ -42,6 +43,7 @@ export const IconProfile = styled.img`
 
 `
 export const ProfileDiv = styled.div`
+    transition: 500ms;
     position: relative;
     background-color: ${props => props.color};
     width: 95%;

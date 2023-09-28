@@ -12,7 +12,7 @@ export default function NavBar() {
 
   return (
     <Main>
-        <Navbar expand={expand} className="navbar navbar-expand-lg navbar-light">
+        <Navbar expand={expand} className="navbar navbar-expand-lg navbar-dark">
           <Container fluid id={"test"}>
             <Navbar.Brand href="#"><Icons className={"iconCharis"} src={charisIcon}></Icons>
             </Navbar.Brand>

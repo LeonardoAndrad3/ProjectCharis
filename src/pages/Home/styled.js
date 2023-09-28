@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import background from "@icons/fundoSalao.jpg"
 import backgroundProfile from "@icons/teste.jpg"
 
 export const Main = styled.div`
@@ -11,16 +10,14 @@ export const Main = styled.div`
     var(--color-background-one), 
     var(--color-background-two)); */
     margin-bottom: 4em;
+
 `
 export const BackGround = styled.div`
     position: absolute;
     top: 0px;
     width: 100%;
-    height: 40%;
-    background-image:  url(${background});
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: blur(3px) brightness(50%);
+    height: 45%;
+    filter: blur(5px) brightness(50%);
     backdrop-filter: brightness(100%);
     
     video{
@@ -78,8 +75,11 @@ export const PhotoMain = styled.img`
         }
     }
 
+    @media (max-width: 1400px) {
+        width: 50%;
+    }
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1000px) {
         display: none;
     }
 `
@@ -96,7 +96,7 @@ export const ContentFirst = styled.div`
     color: black;
     max-height: 900px;
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1000px) {
         transform: translate(-50%, -40%);
     }
 `
@@ -111,7 +111,7 @@ export const ContentTitle = styled.div`
     align-items: start;
     justify-content: center;
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1000px) {
         width: 95%;
         left: 50%;
         transform: translate(-50%, 0);
@@ -128,7 +128,7 @@ export const BtnDiv = styled.div`
     height: 20%;
     display: flex;
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1000px) {
         left: 50%;
         width: 100%;
         transform: translate(-50%, 40%);
@@ -224,26 +224,25 @@ export const GridDiv = styled.div`
     gap: 3em;
 
     @media (max-width: 1400px) {
+        transition: 1s;
         grid-template-columns: auto auto auto;
     }
 `
 
 export const ItemGrid = styled.img`
+    transition: 500ms;
     width: 100px;
 
     @media (max-width: 1400px) {
-        width: 15vw;
-    }
-
-    @media (max-width: 350px) {
         width: 10vw;
     }
+
 `
 
 // profissional of stetic
 
 export const MainProfile = styled.div`
-
+    
     display: flex;
     position: relative;
     flex-direction: column;
@@ -263,6 +262,7 @@ export const MainProfile = styled.div`
 `
 
 export const ProfileDiv = styled.div`
+
     display: grid;  
     width: 90%;
     margin-bottom: 5em;
@@ -297,7 +297,9 @@ export const DivPhotos = styled.div`
     width: 90%;
     height: 100%;
     margin: auto;
-    margin-top: 5em;
+    margin-top: 10%;
+    margin-bottom: 10%;
+
 
     ul{
         width: 100%;
@@ -343,5 +345,7 @@ export const PhotosGrid_1 = styled.img`
 export const PhotosGrid_2 = styled(PhotosGrid_1)`
 
 `
+
+
 
 //export{}

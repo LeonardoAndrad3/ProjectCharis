@@ -89,10 +89,6 @@ export default function Home(){
 
             </ServiceDiv>
 
-
-
-
-        
             <MainProfile>
                 <Title>
                     Profissionais
@@ -140,10 +136,9 @@ export default function Home(){
                     </li> 
             
                 </ul>
-
             </DivPhotos>
    
-
+          
 
         </>
     );
