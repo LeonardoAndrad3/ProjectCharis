@@ -4,6 +4,7 @@
     border-radius: 50%;
 }
 
+
 .titleCanvas{
     width: auto;
     height: 150px;
@@ -19,4 +20,15 @@
     color: var(--color-world-p);
     font-size: 24px;
     font-weight: 500;
+}
+
+
+
+@media (max-width: 350px) {
+    .navbar{
+        height: 10px;
+    }
+    .iconCharis{
+        height: 20vw;
+    }
 }

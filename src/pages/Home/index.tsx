@@ -6,20 +6,36 @@ import hairImg from "@icons/hairImg.png"
 import ContentService from "@components/ContentService"
 import Profile from "@components/Profile"
 import img1  from "@icons/works/image 20.png"
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import work from "@icons/test.mp4"
 
 
 export default function Home(){
+    
+    const [hidden, setHidden] = useState(false);
+
+    useEffect(() =>{
+        document.addEventListener("scroll", (event) =>{
+            if(window.pageYOffset > 10){
+                setHidden(true)
+            } else{
+                setHidden(false);
+            }
+        });
+    }, []);
+
     return(
         <>
         <Main id="main">
-            <BackGround>
+            <BackGround state={hidden}>
                 <video muted autoPlay loop>
                     <source  src={work} type="video/mp4"/>
                 </video>
             </BackGround>
-            <ContentFirst>
+
+            {
+                hidden ?
+                <ContentFirst>
                 <ContentTitle>
                     <Title> 
                         Vamos retocar o visual?
@@ -28,20 +44,24 @@ export default function Home(){
                     <Text>
                         Venha para o charis! Sua satisfação e nossa especialidade 
                     </Text>
+
+                    <BtnDiv className="btnDiv">
+                    <button type="button" className="btn btn-outline-dark btnFirstContent"><Text>Venha nos conhecer</Text></button>
+                </BtnDiv>
+               
                 </ContentTitle>
 
           
                 <PhotoMain src={mulherMain}/> 
-                <img className={"iconContentFirst iconHair"} alt="iconBelo" src={iconHair} />
+                {/* <img className={"iconContentFirst iconHair"} alt="iconBelo" src={iconHair} /> */}
 
-                <BtnDiv className="btnDiv">
-                    <button type="button" className="btn btn-outline-dark btnFirstContent"><Text>Venha nos conhecer</Text></button>
-                    <div className="mainFlecha">
-                        <div className="flecha"></div>
-                    </div>
-                </BtnDiv>
-               
-            </ContentFirst>
+                
+                </ContentFirst>
+
+                :
+                <></>
+            }
+           
 
         </Main>
 

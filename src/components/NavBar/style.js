@@ -8,5 +8,7 @@ export const Main = styled.main`
     position: absolute;
     top: 0px;
     width: 100%;
+
+
 `
 //export{}

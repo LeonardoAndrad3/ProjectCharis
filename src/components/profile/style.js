@@ -64,6 +64,8 @@ export const ProfileDiv = styled.div`
         padding: 2em;
     }
 
+ 
+
     @media (max-width: 1200px) {
         display: flex;
         flex-direction: column;
@@ -78,10 +80,28 @@ export const ProfileDiv = styled.div`
 
     @media (max-width: 650px) {
         display: flex;
+        width: 70%;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
+
+        p{
+        font-size: 3.5vw;
+        }
+    }
+
+    @media (max-width: 350px) {
+        display: flex;
+        width: 70%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        p{
+        font-size: 4vw;
+        }
     }
     
 `

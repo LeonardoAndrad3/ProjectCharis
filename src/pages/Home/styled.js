@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import backgroundProfile from "@icons/teste.jpg"
 
 export const Main = styled.div`
@@ -10,13 +10,26 @@ export const Main = styled.div`
     var(--color-background-one), 
     var(--color-background-two)); */
     margin-bottom: 4em;
-
 `
 export const BackGround = styled.div`
-    position: absolute;
+    transition: 500ms;
+    ${props => {
+        if(props.state){
+            return css`
+
+                position: absolute;
+                height: 45%;
+            `
+        } else {
+            return css`
+                position: relative;
+                height: 100%;
+            `
+        }
+    }};
+
     top: 0px;
     width: 100%;
-    height: 45%;
     filter: blur(5px) brightness(50%);
     backdrop-filter: brightness(100%);
     
@@ -49,6 +62,7 @@ export const PhotoMain = styled.img`
     width: 40%;
     height: 80%;
     min-width: 300px;
+    transition: 500ms;
     position: absolute;
     bottom: 20%;
     left: -15%;
@@ -88,8 +102,8 @@ export const ContentFirst = styled.div`
     width: 80%;
     height: 74%;
     border-radius: 20px;
-    position: absolute;
-    top: 50%;
+    position: relative;
+    top: 55%;
     left: 50%;
     transform: translate(-40%, -40%);
     /* background-color: rgb(255,255,255,50%); */
@@ -102,16 +116,23 @@ export const ContentFirst = styled.div`
 `
 
 export const ContentTitle = styled.div`
-    width: auto;
+    width: 70%;
     height: 100%;
-    position: absolute;
-    right: 0px;
+    position: relative;
+    left: 30%;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     justify-content: center;
 
     @media (max-width: 1000px) {
+        width: 95%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        align-items: center;
+    }
+
+    @media (max-width: 450px) {
         width: 95%;
         left: 50%;
         transform: translate(-50%, 0);
@@ -121,19 +142,31 @@ export const ContentTitle = styled.div`
 
 export const BtnDiv = styled.div`
     position: absolute;
-    top: 50%;
-    left: 70%;
-    transform: translate(-50%, 60%);
-    width: 50%;
-    height: 20%;
-    display: flex;
+    width: 100%;
+    height: 15%;
+    bottom: 20%;
+    right: 0px;
+    transition: 500ms;
+
+    button{
+        p{
+            @media (max-width: 450px) {
+                font-size: 5vw;
+            }
+        }
+    }
 
     @media (max-width: 1000px) {
         left: 50%;
         width: 100%;
-        transform: translate(-50%, 40%);
+        transform: translate(-50%, -60%);
         align-items: center;
     }
+
+    @media (max-width: 380px) {
+        bottom: 0%;
+    }
+
 `
 
 export const PqDiv = styled.div`
@@ -180,7 +213,7 @@ export const DivTitle = styled.div`
         font-size: 30px;
 
         @media (max-width: 600px) {
-            font-size: 8vw;
+            font-size: 5vw;
         }
     }
     h1{
@@ -256,6 +289,8 @@ export const MainProfile = styled.div`
        color: white;
        position: relative;
        top: 2vw;
+       background-color: rgb(255,255,255, 20%);
+       border-radius: 10px;
     }
 
 
@@ -314,9 +349,13 @@ export const DivPhotos = styled.div`
             "p1" 
             "p2"
             "p3";
-
         }
 
+        :hover img:not(:hover){
+            filter: blur(3px);
+        }
+
+      
     }
 
     li{
@@ -327,19 +366,22 @@ export const DivPhotos = styled.div`
         width: auto;
         height: auto;
         gap: 1.5em;
+        pointer-events: none;
 
         @media (max-width: 450px) {
             flex-direction: row;
             gap: 10px;
             padding: 0px;
         }
-
     }
 `
 
 export const PhotosGrid_1 = styled.img`
     width: 95%;
     height: 50%;
+    transition: 500ms;
+    border-radius: 10px;
+    pointer-events: auto;
 `
 
 export const PhotosGrid_2 = styled(PhotosGrid_1)`

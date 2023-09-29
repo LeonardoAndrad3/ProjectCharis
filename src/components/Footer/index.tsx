@@ -101,46 +101,51 @@ export default function Footer() {
 
         <div>
           <table>
-              <tr>
-                  <th>Ivana Nascimento</th>
-                  <th>Mariana Andrade</th>
-                  <th>Victor Nascimento</th>
-              </tr>
-              <tr>
-                  <td><button>Designer</button></td>
-                  <td><button>Designer</button></td>
-                  <td><button>Designer</button></td>
-              </tr>
-              <tr>
-                  <td><button>Designer</button></td>
-                  <td><button>Designer</button></td>
-                  <td><button>Designer</button></td>
-              </tr>
-              <tr>
-                  <td><button>Designer</button></td>
-                  <td><button>Designer</button></td>
-                  <td><button>Designer</button></td>
-              </tr>
-              <tr>
-                  <td><button>Designer</button></td>
-                  <td><button>Designer</button></td>
-                  <td><button>Designer</button></td>
-              </tr>
-              <tr>
-                  <td><button>Designer</button></td>
-                  <td><button>Designer</button></td>
-                  <td><button>Designer</button></td>
-              </tr>
-              <tr>
-                  <td><button>Designer</button></td>
-                  <td><button>Designer</button></td>
-                  <td><button>Designer</button></td>
-              </tr>
-              <tr>
-                  <td><button>Designer</button></td>
-                  <td><button>Designer</button></td>
-                  <td><button>Designer</button></td>
-              </tr>
+            <thead>
+                <tr>
+                    <th>Ivana Nascimento</th>
+                    <th>Mariana Andrade</th>
+                    <th>Victor Nascimento</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td><button>Designer</button></td>
+                    <td><button>Designer</button></td>
+                    <td><button>Designer</button></td>
+                </tr>
+                <tr>
+                    <td><button>Designer</button></td>
+                    <td><button>Designer</button></td>
+                    <td><button>Designer</button></td>
+                </tr>
+                <tr>
+                    <td><button>Designer</button></td>
+                    <td><button>Designer</button></td>
+                    <td><button>Designer</button></td>
+                </tr>
+                <tr>
+                    <td><button>Designer</button></td>
+                    <td><button>Designer</button></td>
+                    <td><button>Designer</button></td>
+                </tr>
+                <tr>
+                    <td><button>Designer</button></td>
+                    <td><button>Designer</button></td>
+                    <td><button>Designer</button></td>
+                </tr>
+                <tr>
+                    <td><button>Designer</button></td>
+                    <td><button>Designer</button></td>
+                    <td><button>Designer</button></td>
+                </tr>
+                <tr>
+                    <td><button>Designer</button></td>
+                    <td><button>Designer</button></td>
+                    <td><button>Designer</button></td>
+                </tr>
+              </tbody>
           </table>
         </div>
 

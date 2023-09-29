@@ -8,7 +8,7 @@ export const MainFooter = styled.div`
   color: white;
   display: flex;
   flex-direction: column;
-  padding: 3% 10% 0em 10%;
+  padding: 7% 10% 0em 10%;
 
   hr{
     position: absolute;
@@ -94,7 +94,6 @@ export const StayInto = styled.div`
     height: 100%;
     display: flex;
 
-
     div{
       height: 80%;
       width: 40%;
@@ -127,6 +126,7 @@ export const StayInto = styled.div`
     text-align: justify;
     padding: 1em;
     border-radius: 10px;
+    resize: none;
   }
 
   h1{
@@ -151,6 +151,37 @@ export const StayInto = styled.div`
     height: 500px;
     margin-top: 3cm;
   }
+
+  @media (max-width: 650px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2em;
+
+      input[type=button]{
+        position: relative;
+        bottom: -10%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+      }
+ 
+      main{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+        height: 80%;
+
+        div{
+          width: 80%;
+        }
+        
+        textarea{
+          width: 80%;
+        } 
+      }
+    } 
 
 `;
 
@@ -207,23 +238,37 @@ export const MediaDiv = styled.div`
   justify-content: center;
   gap: 2em;
   align-items: center;
-  border: solid 1px red;
 
   img{
       width: auto;
-      height: 70%;
+      height: 80%;
+      padding: 10px;
       max-width: 90px;
+      transition: 300ms;
+      border-radius: 5px;
+
+      :hover{
+        transform: perspective(100px) translateZ(20px);
+        box-shadow: 0px 8px 0px -2px;
+      
+      }
   }
 
   @media (max-width: 900px) {
-    img{max-width: 50px;}
+    img{max-width: 12vw;}
     margin-top: 1cm;
   }
 
   @media (max-width: 600px) {
-    img{max-width: 10vw}
-    margin-top: 1cm;
+    img{max-width: 15vw}
   }
+
+  
+  @media (max-width: 400px) {
+    img{max-width: 20vw}
+  }
+
+
 
 `;
 
