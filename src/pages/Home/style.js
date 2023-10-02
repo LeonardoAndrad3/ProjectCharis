@@ -5,7 +5,6 @@ export const Main = styled.div`
     width: 100%;
     height: 103vh;
     position: relative;
-    top: -2em;
     /* linear-gradient(to right,
     var(--color-background-one), 
     var(--color-background-two)); */
@@ -16,7 +15,6 @@ export const BackGround = styled.div`
     ${props => {
         if(props.state){
             return css`
-
                 position: absolute;
                 height: 45%;
             `
@@ -27,8 +25,7 @@ export const BackGround = styled.div`
             `
         }
     }};
-
-    top: 0px;
+    
     width: 100%;
     filter: blur(5px) brightness(50%);
     backdrop-filter: brightness(100%);
@@ -37,7 +34,7 @@ export const BackGround = styled.div`
         object-fit: cover;
         width: 100%;
         height: 100%;
-        position: absolute;
+        position: relative;
     }
 
 `

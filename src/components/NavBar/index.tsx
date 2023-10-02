@@ -30,9 +30,9 @@ export default function NavBar() {
               </Offcanvas.Header>
               <Offcanvas.Body >
                 <Nav id={"bodyCanvas"} className="colorLink justify-content-end flex-grow-1 pe-3">
-                    <Nav.Link href="#action1">Home</Nav.Link>
+                    <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="#action2">Agendamento</Nav.Link>
-                    <Nav.Link href="#action1">Blog</Nav.Link>
+                    <Nav.Link href="/blog">Blog</Nav.Link>
                     <Nav.Link href="#action2">Login</Nav.Link>
                     <hr/>
                 </Nav>

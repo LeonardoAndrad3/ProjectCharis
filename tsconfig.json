@@ -4,7 +4,7 @@
     "paths": {
       "@components/*": ["./src/components/*"],
       "@icons/*": ["./src/icons/*"],
-      "@/*": ["./src/*"]
+      "@pages/*": ["./src/pages/*"]
     },
     "target": "es5",
     "lib": [

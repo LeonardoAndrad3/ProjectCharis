@@ -5,10 +5,10 @@ export const Icons = styled.img`
 `
 
 export const Main = styled.main`
-    position: absolute;
+    position: relative;
     top: 0px;
     width: 100%;
-
-
+    z-index: 1;
+    background-color: var(--color-components);
 `
 //export{}

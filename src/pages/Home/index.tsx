@@ -1,4 +1,7 @@
-import {Text, Title, Main, PhotoMain, ContentTitle,ContentFirst, BtnDiv, BackGround, PqDiv, DivTitle, GridDiv, ItemGrid, ServiceDiv,ProfileDiv,MainProfile, DivPhotos, PhotosGrid_1, PhotosGrid_2} from "./styled.js";
+import React, { useEffect, useState } from 'react';
+import work from "@icons/test.mp4"
+
+import {Text, Title, Main, PhotoMain, ContentTitle,ContentFirst, BtnDiv, BackGround, PqDiv, DivTitle, GridDiv, ItemGrid, ServiceDiv,ProfileDiv,MainProfile, DivPhotos, PhotosGrid_1, PhotosGrid_2} from "./style.js";
 import mulherMain from "@icons/initContent/iconContentFirst.png"
 import iconHair from "@icons/initContent/hairIcon.png"
 import "./index.css"
@@ -6,8 +9,7 @@ import hairImg from "@icons/hairImg.png"
 import ContentService from "@components/ContentService"
 import Profile from "@components/Profile"
 import img1  from "@icons/works/image 20.png"
-import React, { useEffect, useState } from 'react';
-import work from "@icons/test.mp4"
+
 
 
 export default function Home(){
@@ -16,7 +18,7 @@ export default function Home(){
 
     useEffect(() =>{
         document.addEventListener("scroll", (event) =>{
-            if(window.pageYOffset > 10){
+            if(window.pageYOffset > 1){
                 setHidden(true)
             } else{
                 setHidden(false);
@@ -157,9 +159,6 @@ export default function Home(){
             
                 </ul>
             </DivPhotos>
-   
-          
-
         </>
     );
 }
