@@ -237,7 +237,11 @@ export const MediaDiv = styled.div`
   display: flex;
   justify-content: center;
   gap: 2em;
-  align-items: center;
+  align-items: center;  
+
+  a{
+    color: white;
+  }
 
   img{
       width: auto;

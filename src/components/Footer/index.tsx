@@ -70,10 +70,10 @@ export default function Footer() {
     
 
         <MediaDiv>
-          
-          <Icons src={whats} />
-          <Icons src={insta} />
-          <Icons src={face} />
+        
+          <a href="https://wa.me/5511964824193"><Icons src={whats} /></a>
+          <a href="https://www.instagram.com/estetica_ivanabirth"><Icons src={insta} /></a>
+          <a href="https://www.facebook.com/chariscabeloeestetica"><Icons src={face} /></a>
         </MediaDiv>
 
      
