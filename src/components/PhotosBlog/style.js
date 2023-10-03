@@ -9,6 +9,8 @@ export const Main = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 2em;
+    margin-bottom: 2cm;
 `
 export const DivPerfil = styled.div`
     width: 100%;
@@ -52,7 +54,7 @@ export const DivPost = styled.div`
 
 export const DivOptions = styled.div`
     height: 50px;
-    width: 98%;
+    width: 95%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -73,12 +75,30 @@ export const DivOptions = styled.div`
         padding: 0px;
         height: 100%;
         width: auto;
+
+    }
+
+    a{
+        height: 100%;
+        width: auto;
     }
 
     img{
-        height: 90%;
+        height: 100%;
         width: auto;
     }    
+
+    @keyframes upStar {
+        0%{
+            transform: translate(0px, 0px) rotate(0deg);
+        }
+        50%{
+            transform: perspective(80px) translateZ(20px);
+        }
+        100%{
+            transform: rotate(0deg) translate(0px, 0px);
+        }
+    }
 `
 
 export const DivDescription = styled.div`
@@ -88,9 +108,61 @@ export const DivDescription = styled.div`
 `
 
 export const DivComment = styled.div`
-    width: 98%;
+    width: 90%;
     height: auto;
     padding-left: 2em;
+
+    div{
+        width: 100%;
+        height: auto;
+    }
+
+    p{
+        width: 100%;
+        height: auto;
+        min-height: 50px;
+        margin: 0px;
+        gap: 10px;
+        display: flex;
+        align-items: start;
+        color: rgb(120,120,120, 100%);
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    span{
+        position: relative;
+        top: -10px;
+        width: 20%;
+        font-size: 12px;
+        height: auto;
+    }
+
+    textarea{
+        position: relative;
+        left: 50%;
+        bottom:0px;
+        transform: translate(-53%, 0);
+        margin-top: 2em;
+        border: none;
+        width: 80%;
+        height: 30px;
+        border-bottom: solid 1px rgb(0,0,0, 40%);
+        outline: none;
+        overflow-y: auto;
+        overflow-x: none;
+        word-break: break-all;
+        resize: none;
+
+        :focus{
+            height: 50px;
+            border-bottom: solid 1px rgb(0,0,0, 60%);
+        }
+    }
+
 `
 
 //export{}

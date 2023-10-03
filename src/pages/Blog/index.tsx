@@ -2,6 +2,10 @@ import React from 'react';
 //import {View} from 'react-native';
 import { Main, DivStatus, DivPhotos } from './style';
 import PhotosBlog from '@components/PhotosBlog';
+import w1 from "@icons/works/image 20.png"
+import w2 from "@icons/works/image 21.png"
+import w3 from "@icons/works/image 22.png"
+
 
 export default function Blog(){
     return(
@@ -14,8 +18,9 @@ export default function Blog(){
 
             <DivPhotos>
 
-                <PhotosBlog/>
-
+                <PhotosBlog service={w1}/>
+                <PhotosBlog service={w2}/>
+                <PhotosBlog service={w3}/>
             </DivPhotos>
         </Main>
     );
