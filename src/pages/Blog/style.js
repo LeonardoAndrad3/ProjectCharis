@@ -18,7 +18,6 @@ export const DivStatus = styled.div`
 export const DivPhotos = styled.div`
 
     margin-bottom: 2cm;
-    
 
 `
 //export{}

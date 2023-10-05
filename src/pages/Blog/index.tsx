@@ -9,34 +9,49 @@ import { Commentary } from '../../assets/Commentary'
 import mari from "@icons/mari.png"
 import ivana from "@icons/initContent/iconContentFirst.png"
 import victor from "@icons/victor.png"
-import { list } from '@assets/messages';
-
-const listTest:Array<Commentary> = [] 
-listTest.push(new Commentary("Leonardo","Muito lindo o serviço", new Date()));
+import axios from 'axios';
 
 interface test{
     id:number,
     autor:string,
+    photo: any,
     messages:Array<Commentary>
 }
 
+
 export default function Blog(){
     
-    const [data, setData] = useState([]);
-    
+    const instance = axios.create({
+        baseURL: "http://localhost:3000",
+        timeout: 1000
+    })
+    const [html, setHtml] = useState<Element[] | any>()
+
     useEffect(()=>{
-        fetch("http://localhost:3000/poster", {
-            method: "GET",
+        const t = async() =>{instance.get("/poster", {
             headers:{
                 'Content-Type': 'application/json',
             },
         })
-        .then((sucess) => sucess.json())
-        .then((data) => {
-            setData(data)
+        .then(({data}) => {
+            setHtml(data.map((poster:test)=> 
+                
+                <PhotosBlog
+                socket={instance}
+                key={poster.id} 
+                id={poster.id} 
+                service={w1} 
+                perfil={require(`../../${poster.photo}`)}
+                name={poster.autor} 
+                />
+            ))
         })
         .catch((err) => console.log(err))
-    }, [])
+        }
+
+        t()
+    },[instance])
+
 
     return(
         <Main>
@@ -48,15 +63,7 @@ export default function Blog(){
 
             <DivPhotos>
 
-                {data.map((poster:test)=> 
-                    <PhotosBlog
-                    key={poster.id} 
-                    id={poster.id} 
-                    service={w1} 
-                    perfil={ivana}
-                    name={poster.autor} 
-                    poster={poster.messages}/>
-                )}
+                {html}
 
             </DivPhotos>
         </Main>
