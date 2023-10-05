@@ -27,8 +27,8 @@ root.render(
     <Navbar/>
     <BrowserRouter basename='/'>
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='blog' element={<Blog/>}/>
+        <Route path='/home' element={<Home/>}/>
+        <Route path='/' element={<Blog/>}/>
       </Routes>
     </BrowserRouter>
 

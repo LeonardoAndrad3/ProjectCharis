@@ -16,6 +16,7 @@ module.exports = {
             '@components': './src/components',
             '@icons': './src/icons',
             '@pages': "./src/pages",
+            '@assets': "./src/assets",
           },
         },
       ],

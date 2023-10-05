@@ -2,23 +2,39 @@ import styled from 'styled-components'
 
 export const Main = styled.div`
     width: 70vw;
-    max-width: 600px;
+    max-width: 500px;
     height: auto;
     border-radius: 20px;
-    border: solid 1px rgb(0,0,0,10%);
+  /* ;  border: solid 1px rgb(0,0,0,10%); */
+    box-shadow: 1px 10px 10px -2px rgb(0,0,0,10%);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 2em;
     margin-bottom: 2cm;
+    transition: 100ms;
+
+    @media (max-width: 600px) {
+        width: 90vw;
+    }
+
+    @media (max-width: 500px) {
+        width: 100vw;
+    }
 `
 export const DivPerfil = styled.div`
     width: 100%;
-    height: 100px;
+    height: 80px;
     display: flex;
-    padding: 0 0 0 1cm;
+    padding: 0 0 0 10px;
     justify-content: left;
     align-items: center;
+
+    span{
+        color: rgb(118, 118, 118);
+        position: relative;
+        right: 10px;
+    }
 
     img{
         width: auto;
@@ -37,29 +53,42 @@ export const DivPerfil = styled.div`
         align-items: center;
     }
 
+
+    @media (max-width: 600px) {
+        img{
+            height: 9vw;
+        }
+    }
+
 `
 
 export const DivPost = styled.div`
-
     width: 100%;
     height: auto;
-    border-radius: 10px;
 
     img{
         height: 100%;
         width: 100%;
     }
-
 `
 
 export const DivOptions = styled.div`
-    height: 50px;
+    height: 30px;
     width: 95%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 1em;
     margin-bottom: 1em;
+
+    span{
+
+        font-size: 14px;
+
+        @media (max-width: 450px) {
+            font-size: 3vw;
+        }
+    }
 
     div{
         height: 100%;
@@ -69,24 +98,27 @@ export const DivOptions = styled.div`
         align-items: center;
         gap: 1em;
     }
+
     button{
         background-color: transparent;
         border: 0px;
         padding: 0px;
         height: 100%;
         width: auto;
-
     }
 
     a{
         height: 100%;
         width: auto;
+        display: flex;
+        align-items: center;
     }
 
     img{
         height: 100%;
         width: auto;
-    }    
+        transition: 500ms;
+    }
 
     @keyframes upStar {
         0%{
@@ -99,31 +131,60 @@ export const DivOptions = styled.div`
             transform: rotate(0deg) translate(0px, 0px);
         }
     }
+
+    @media (max-width: 500px) {
+
+    }
 `
 
 export const DivDescription = styled.div`
     width: 98%;
     padding-left: 1em;
+    text-align: start;
 
+    a{
+        text-decoration: none;
+        color: black;
+        font-weight: 500;
+        margin-right: 10px;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 3vw;
+    }
+
+    @media (max-width: 400px) {
+        font-size: 3.5vw;
+    }
+
+    @media (max-width: 300px) {
+        font-size: 4vw;
+    }
+
+  
 `
 
 export const DivComment = styled.div`
     width: 90%;
     height: auto;
-    padding-left: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 
-    div{
-        width: 100%;
-        height: auto;
+
+    main{
+        div{
+            margin-bottom: 10px;
+        }
     }
+
 
     p{
         width: 100%;
         height: auto;
-        min-height: 50px;
+        min-height: 30px;
         margin: 0px;
         gap: 10px;
-        display: flex;
         align-items: start;
         color: rgb(120,120,120, 100%);
     }
@@ -131,24 +192,26 @@ export const DivComment = styled.div`
     a{
         text-decoration: none;
         color: black;
+        height: auto;
     }
 
     span{
-        position: relative;
-        top: -10px;
         width: 20%;
         font-size: 12px;
         height: auto;
     }
 
+    form{
+        width: 100%;
+        display: flex;
+    }
+
     textarea{
         position: relative;
-        left: 50%;
         bottom:0px;
-        transform: translate(-53%, 0);
         margin-top: 2em;
         border: none;
-        width: 80%;
+        width: 100%;
         height: 30px;
         border-bottom: solid 1px rgb(0,0,0, 40%);
         outline: none;
@@ -160,6 +223,16 @@ export const DivComment = styled.div`
         :focus{
             height: 50px;
             border-bottom: solid 1px rgb(0,0,0, 60%);
+        }
+
+      
+    }
+
+    @media (max-width: 500px) {
+        width: 90%;
+        padding: 5px;
+        textarea{
+            width: 90%;
         }
     }
 

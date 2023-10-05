@@ -15,56 +15,44 @@ import startFull from "@icons/iconBlog/Star 1.png"
 import startEmpty from "@icons/iconBlog/starEmpty.png"
 
 import whats from "@icons/iconBlog/image 30 (1).png"
+import { Commentary } from 'src/assets/Commentary';
 
-class Commentary{
-    autor: string;
-    comment: string;
-    date: Date;
+function html(list:Array<Commentary>){
+    let html = ""
+    list.forEach((comment)=>{
+        html += comment.element()
+    })
 
-    constructor(autor:string,message:string, date: Date){
-        this.autor = autor;
-        this.comment = message;
-        this.date = date;
-    }
-
-    element(){
-        return `<div>
-        <p>
-            <a href="">
-                ${this.autor}
-            </a>
-            ${this.comment}
-        </p>
-        <span>${this.date.toLocaleTimeString([], {hour:"2-digit", minute:"2-digit"})
-        }</span>
-        </div>`
-    }
+    return html;
 }
 
 
+export default function Photos(props:{service:any, id:number, perfil:any, name:string, poster:Array<Commentary>}) {
 
-const listCommentary: Array<Commentary> = [new Commentary("Márcia_Star","Linda", new Date()),
-new Commentary("Gorila_Veia","otimo serviço", new Date())];
-
-export default function Photos(props:{service:any}){
     const [star, setStar] = useState(false);
     const [value, setValue] = useState("");
-    const [poster, setPoster] = useState(listCommentary);
+    const [poster, setPoster] = useState(props.poster.map((message)=> new Commentary(message.autor, message.comment, new Date(message.date))));
 
-    let iconStar = document.getElementById("star")
-    let posters = "";
-    const form = document.getElementById("form");
-   
+    let iconStar = document.getElementById(`${props.id}star`)
+
     const addComment = (e: React.FormEvent) => {
         e.preventDefault();
 
         let newMessage = value;
-
-        listCommentary.push(new Commentary("Annonimation", newMessage, new Date()))
-
-        setPoster(listCommentary)
+        let postMessage = new Commentary("Annonimation", newMessage, new Date())
+        
+        poster.push(postMessage)
 
         setValue("")
+
+        // fetch("http://localhost:3000/poster",{
+        //     method:"POST",
+        //     headers:{
+        //         "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify()
+        // })
+        // .then()
     }
     
     const changeValue = (e: any) =>{
@@ -79,7 +67,6 @@ export default function Photos(props:{service:any}){
         }
     }
 
-
     useEffect(()=>{
         if(star){
             iconStar!.style.animation = "upStar 300ms linear"
@@ -90,15 +77,25 @@ export default function Photos(props:{service:any}){
             iconStar ? iconStar.style.animation = "none" : console.log();
         } 
 
-    },[star, poster])
+        
+  
+    },[iconStar, star])
+
+    useEffect(()=>{
+
+        
+        console.log("Oi")
+    }, [])
 
     return(
         <Main>
             <DivPerfil>
-                <img src={ivana} alt="" />
-                <p>Ivana Nascimento</p>
+                <img src={props.perfil} alt="" />
+                <span>•</span>
+                <p>{props.name}</p>
             </DivPerfil>
             <DivPost>
+                
                 <img src={props.service} alt="" />
             </DivPost>
 
@@ -106,21 +103,23 @@ export default function Photos(props:{service:any}){
                 <div>
                     <button onClick={()=> setStar(!star)}
                     id="likedBtn">
-                        <img id='star' src={startEmpty} alt="" />
+                        <img id={`${props.id}star`} src={startEmpty} alt="" />
                     </button>
                     <a href="https://wa.me/5511964824193"><img src={whats} alt="" />
                     </a>
                 </div>
-
                 <span>20/10/2023 - 19:30 PM</span>
             </DivOptions>
             <DivDescription>
-                <p>Somos profissionais da área de estética e cabelelheiros.</p>
+                <p>
+                <a href="">
+                    {props.name}
+                </a>
+                Somos profissionais da área de estética e cabelelheiros.</p>
             </DivDescription>
             <DivComment  id="divComment">
-                {poster.forEach(e => posters += e.element())}
 
-                <main dangerouslySetInnerHTML={{__html: posters}}/>
+                <main dangerouslySetInnerHTML={{__html: html(poster)}}/>
             
                 <form 
                     onSubmit={addComment} 

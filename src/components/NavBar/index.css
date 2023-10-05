@@ -22,13 +22,17 @@
     font-weight: 500;
 }
 
-
+#test{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 @media (max-width: 350px) {
     .navbar{
-        height: 10px;
+        height: 50px;
     }
     .iconCharis{
-        height: 20vw;
+        height: 10vw;
     }
 }
