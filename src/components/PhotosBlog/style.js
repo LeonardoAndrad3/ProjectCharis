@@ -183,6 +183,7 @@ export const DivComment = styled.div`
         width: 100%;
         height: auto;
         min-height: 30px;
+        display: flex;
         margin: 0px;
         gap: 10px;
         align-items: start;
@@ -199,6 +200,7 @@ export const DivComment = styled.div`
         width: 20%;
         font-size: 12px;
         height: auto;
+
     }
 
     form{

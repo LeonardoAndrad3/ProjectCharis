@@ -9,7 +9,7 @@ import { Commentary } from '../../assets/Commentary'
 import mari from "@icons/mari.png"
 import ivana from "@icons/initContent/iconContentFirst.png"
 import victor from "@icons/victor.png"
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 
 interface test{
     id:number,
@@ -25,7 +25,9 @@ export default function Blog(){
         baseURL: "http://localhost:3000",
         timeout: 1000
     })
-    const [html, setHtml] = useState<Element[] | any>()
+
+
+    const [html, setHtml] = useState<Element[] | any>(<></>)
 
     useEffect(()=>{
         const t = async() =>{instance.get("/poster", {
@@ -35,14 +37,13 @@ export default function Blog(){
         })
         .then(({data}) => {
             setHtml(data.map((poster:test)=> 
-                
                 <PhotosBlog
-                socket={instance}
-                key={poster.id} 
-                id={poster.id} 
-                service={w1} 
-                perfil={require(`../../${poster.photo}`)}
-                name={poster.autor} 
+                    key={poster.id} 
+                    id={poster.id} 
+                    service={w1} 
+                    perfil={require(`../../${poster.photo}`)}
+                    name={poster.autor} 
+                    socket = {instance}
                 />
             ))
         })

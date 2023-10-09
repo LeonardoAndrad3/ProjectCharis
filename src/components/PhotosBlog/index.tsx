@@ -15,21 +15,22 @@ import startFull from "@icons/iconBlog/Star 1.png"
 import startEmpty from "@icons/iconBlog/starEmpty.png"
 import whats from "@icons/iconBlog/image 30 (1).png"
 import { Commentary } from 'src/assets/Commentary';
+import { AxiosInstance } from 'axios';
 
-interface postPoster{
-    service:any, 
-    id:number, 
-    perfil:any, 
-    name:string, 
-    poster:Array<Commentary>
+interface message{
+    comment: Commentary,
+    idPost: number,
+    id: number
 }
 
 interface postMessage{
     comment: Commentary,
-    idPost: number
+    idPost: number,
 }
 
-export default function Photos(props:{service:any, id:number, perfil:any, name:string,socket:any}) {
+export default function Photos(props:{service:any, id:number, perfil:any, name:string, socket:AxiosInstance}) {
+
+    const socket = props.socket
 
     const [star, setStar] = useState(false);
     const [value, setValue] = useState("");
@@ -40,26 +41,27 @@ export default function Photos(props:{service:any, id:number, perfil:any, name:s
     const addComment = (e: React.FormEvent) => {
         e.preventDefault();
 
-        let newMessage = value;
-
-        let postMessage:postMessage = {
+        let newMessage:postMessage = {
             idPost: props.id,
-            comment:new Commentary(1,props.id,"Annonimation", newMessage, new Date())
+            comment:new Commentary(1,props.id,"Annonimation", value, new Date())
         }
         
         setPoster((current:any) => [...current, postMessage])
 
         setValue("")
 
-        fetch(`http://localhost:3000/message`,{
-            method:"POST",
+        socket.post(`/message?idPoster=${props.id}`,   
+            {
+                idPost: newMessage.idPost,
+                comment: newMessage.comment
+            },
+            {
             headers:{
                 "Content-Type": "application/json",
-            },
-
-            body: JSON.stringify(postMessage)
+            }
         })
     }
+    
     
     const changeValue = (e: any) =>{
         setValue(e.target.value)
@@ -74,16 +76,26 @@ export default function Photos(props:{service:any, id:number, perfil:any, name:s
     }
 
     useEffect(()=>{
-        fetch(`http://localhost:3000/message?idPost=${props.id}`,{
-            method: "GET",
+        const t = async() => {await socket.get(`/message?idPost=${props.id}`,{
             headers:{
                 'Content-Type': 'application/json',
             },
         })
-        .then((tes)=> tes.json())
-        .then((data) => setPoster(data))
-        .catch((err) => console.log(err))
-    },[props.socket])
+            .then((data) => setPoster(
+                data.data.map((data:message)=> {
+                    return(
+                        new Commentary(
+                            data.comment.id, 
+                            data.comment.idPoster,
+                            data.comment.autor, 
+                            data.comment.comment, 
+                            new Date(data.comment.date)
+                    ).element(data.id))}))
+                )
+            }
+        t()
+        
+    },[socket, props.id])
 
     useEffect(()=>{
         if(star){
@@ -129,17 +141,8 @@ export default function Photos(props:{service:any, id:number, perfil:any, name:s
             </DivDescription>
             <DivComment  id="divComment">
 
-        {
-            poster.map((message:any) => {return(
-                new Commentary(
-                    message.comment.id, 
-                    message.comment.idPoster,
-                    message.comment.autor, 
-                    message.comment.comment, 
-                    new Date(message.comment.date)
-            ).element(message.id))})
-
-            }
+        { poster
+        }
             
                 <form 
                     onSubmit={addComment} 
