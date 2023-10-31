@@ -50,6 +50,10 @@ public class Message implements Serializable {
 	public Date getDate() {
 		return date;
 	}
+	
+	public void update(Message msg) {
+		setMessage(msg.message);
+	}
 
 	@Override
 	public int hashCode() {

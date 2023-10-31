@@ -36,7 +36,20 @@ public class PosterService {
 		return poster;
 	}
 	
+	public Poster update(@RequestBody Poster poster, String id) {
+		Poster p = findById(id);
+		update(p, poster);
+		rep.save(poster);
+		return poster;
+	}
 	
+	private void update(Poster main, Poster changer) {
+		main.update(changer);
+	}
 	
-	
+	public Poster delete(String id) {
+		Poster poster = findById(id);
+		rep.delete(poster);
+		return poster;
+	}	
 }

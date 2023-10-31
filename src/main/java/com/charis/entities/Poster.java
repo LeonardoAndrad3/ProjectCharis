@@ -20,7 +20,6 @@ public class Poster implements Serializable{
 
 	@DocumentReference
 	private User autor;
-	
 	private String description;
 	private Date date;
 	private String photo;
@@ -69,6 +68,11 @@ public class Poster implements Serializable{
 
 	public Date getDate() {
 		return date;
+	}
+	
+	public void update(Poster poster) {
+		this.description = poster.description;
+		this.photo = poster.photo;
 	}
 
 	@Override
