@@ -12,8 +12,19 @@ import victor from "@icons/victor.png"
 import axios, { AxiosInstance } from 'axios';
 
 interface test{
-    id:number,
-    autor:string,
+    id:String,
+    autor:{
+        id: String,
+        name: String,
+        CPF: String,
+        date: Date,
+        photo: any,
+        describle: String,
+        works: Array<String>,
+        status: String
+    },
+    description: String,
+    date: Date,
     photo: any,
     messages:Array<Commentary>
 }
@@ -22,7 +33,7 @@ interface test{
 export default function Blog(){
     
     const instance = axios.create({
-        baseURL: "http://localhost:3000",
+        baseURL: "http://localhost:8080",
         timeout: 1000
     })
 
@@ -36,13 +47,13 @@ export default function Blog(){
             },
         })
         .then(({data}) => {
+            console.log(data)
             setHtml(data.map((poster:test)=> 
                 <PhotosBlog
-                    key={poster.id} 
                     id={poster.id} 
                     service={w1} 
                     perfil={require(`../../${poster.photo}`)}
-                    name={poster.autor} 
+                    name={poster.autor.name} 
                     socket = {instance}
                 />
             ))
