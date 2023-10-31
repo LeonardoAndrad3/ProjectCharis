@@ -1,24 +1,32 @@
 class Commentary{
-    id: number;
-    idPoster: number;
-    autor: string;
-    comment: string;
+    idPoster: String;
+    autor:{
+        id: String,
+        name: String,
+        CPF: String,
+        date: Date,
+        photo: any,
+        describle: String,
+        works: Array<String>,
+        status: String
+    }
+    comment: String;
     date: Date;
 
-    constructor(id:number, idPoster: number, autor:string,message:string, date: Date){
+    constructor(idPoster: String, autor:any
+        ,message:String, date: Date){
         this.idPoster = idPoster;
-        this.id = id;
         this.autor = autor;
         this.comment = message;
         this.date = date;
     }
 
-    element(idElement:number){
+    element(){
         return(
-        <div key={idElement}>
+        <div>
         <p>
             <a href="*">
-                {this.autor}
+                {this.autor.name}
             </a>
             {this.comment}
         </p>

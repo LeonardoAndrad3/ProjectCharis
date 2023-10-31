@@ -16,19 +16,19 @@ import startEmpty from "@icons/iconBlog/starEmpty.png"
 import whats from "@icons/iconBlog/image 30 (1).png"
 import { Commentary } from 'src/assets/Commentary';
 import { AxiosInstance } from 'axios';
+import { User } from '@assets/User';
 
 interface message{
+    autor:User,
     comment: Commentary,
-    idPost: number,
-    id: number
 }
 
 interface postMessage{
+    autor:User,
     comment: Commentary,
-    idPost: number,
 }
 
-export default function Photos(props:{service:any, id:number, perfil:any, name:string, socket:AxiosInstance}) {
+export default function Photos(props:{service:any, id:String, perfil:any, name:String, socket:AxiosInstance}) {
 
     const socket = props.socket
 
@@ -42,17 +42,17 @@ export default function Photos(props:{service:any, id:number, perfil:any, name:s
         e.preventDefault();
 
         let newMessage:postMessage = {
-            idPost: props.id,
-            comment:new Commentary(1,props.id,"Annonimation", value, new Date())
+            autor: new User("", "Leonardo", "47977037840", new Date, "C:/test", "Sou cabeleleiro profissional", new Array<String>, "OFFLINE" ),
+            comment:new Commentary(props.id,"Annonimation", value, new Date())
         }
         
         setPoster((current:any) => [...current, postMessage])
 
         setValue("")
 
-        socket.post(`/message?idPoster=${props.id}`,   
+        socket.post(`/poster/${props.id}/message`,   
             {
-                idPost: newMessage.idPost,
+                autor: newMessage.autor,
                 comment: newMessage.comment
             },
             {
@@ -76,21 +76,21 @@ export default function Photos(props:{service:any, id:number, perfil:any, name:s
     }
 
     useEffect(()=>{
-        const t = async() => {await socket.get(`/message?idPost=${props.id}`,{
+        const t = async() => {await socket.get(`/poster/${props.id}/message`,{
             headers:{
                 'Content-Type': 'application/json',
             },
         })
-            .then((data) => setPoster(
+            .then((data) =>{setPoster(
                 data.data.map((data:message)=> {
                     return(
                         new Commentary(
-                            data.comment.id, 
                             data.comment.idPoster,
                             data.comment.autor, 
                             data.comment.comment, 
                             new Date(data.comment.date)
-                    ).element(data.id))}))
+                    ).element())}))
+                        }
                 )
             }
         t()
@@ -112,13 +112,12 @@ export default function Photos(props:{service:any, id:number, perfil:any, name:s
     return(
         <Main>
             <DivPerfil>
-                <img src={props.perfil} alt="" />
+                <img src={ivana} alt="" />
                 <span>•</span>
                 <p>{props.name}</p>
             </DivPerfil>
             <DivPost>
-  
-                <img src={props.service} alt="" />
+                <img src={ivana} alt="" />
             </DivPost>
 
             <DivOptions>
