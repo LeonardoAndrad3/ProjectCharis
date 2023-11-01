@@ -20,12 +20,14 @@ public class Message implements Serializable {
 	private User autor;
 	private String message;
 	private Date date;
+	private String idPoster;
 	
-	public Message(String id, User autor, String message, Date date) {
+	public Message(String id, User autor, String message, Date date, String idPoster) {
 		this.id = id;
 		this.autor = autor;
 		this.message = message;
 		this.date = date;
+		this.idPoster = idPoster;
 	}
 
 	public Message() {
@@ -53,6 +55,14 @@ public class Message implements Serializable {
 	
 	public void update(Message msg) {
 		setMessage(msg.message);
+	}
+	
+	public String getIdPoster() {
+		return idPoster;
+	}
+
+	public void setIdPoster(String idPoster) {
+		this.idPoster = idPoster;
 	}
 
 	@Override

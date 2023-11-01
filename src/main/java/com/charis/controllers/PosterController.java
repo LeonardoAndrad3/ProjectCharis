@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.charis.entities.Message;
 import com.charis.entities.Poster;
 import com.charis.services.PosterService;
 
@@ -42,10 +43,22 @@ public class PosterController {
 		return ResponseEntity.ok().body(service.findById(id));
 	}
 	
+	@GetMapping("/{id}/message")
+	public ResponseEntity<List<Message>> findMessage(@PathVariable String id){
+		return ResponseEntity.ok().body(service.findById(id).getMessages());
+	}
+	
 	@PostMapping
 	public ResponseEntity<Void> add(@RequestBody Poster poster) {
-		poster = service.save(poster);
+		poster = service.insert(poster);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(poster.getId()).toUri();
+		return ResponseEntity.created(uri).build();
+	}
+	
+	@PostMapping("/{id}/message")
+	public ResponseEntity<Void> addMessage(@RequestBody Message msg, @PathVariable String id) {
+		msg = service.insertMsg(msg, id);
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}/message").buildAndExpand(msg.getId()).toUri();
 		return ResponseEntity.created(uri).build();
 	}
 	

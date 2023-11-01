@@ -42,8 +42,8 @@ public class Instantiation implements CommandLineRunner {
 		
 		posterRep.save(p1);
 		
-		Message m1 = new Message(null, u2, "Lindo", new Date());
-		Message m2 = new Message(null, u2, "Uau!", new Date());
+		Message m1 = new Message(null, u2, "Lindo", new Date(), p1.getId());
+		Message m2 = new Message(null, u2, "Uau!", new Date(), p1.getId());
 		
 		msgRep.saveAll(Arrays.asList(m1,m2));
 		

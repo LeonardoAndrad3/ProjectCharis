@@ -15,7 +15,6 @@ import com.charis.services.exception.ObjectNotFoundException;
 @Service
 public class MessageService {
 
-	
 	@Autowired
 	private MessageRep rep;
 
