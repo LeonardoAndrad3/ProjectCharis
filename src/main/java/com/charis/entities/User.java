@@ -20,7 +20,7 @@ public class User implements Serializable{
 	private String name;
 	private String CPF;
 	private Date date;
-	private String photo;
+	private Byte[] photo;
 	private String describle;
 	private List<String> works = new ArrayList<>();
 	private Status status;
@@ -28,7 +28,7 @@ public class User implements Serializable{
 	public User() {
 	}
 
-	public User(String id, String name, String cpf, Date date, String photo) {
+	public User(String id, String name, String cpf, Date date, Byte[] photo) {
 		this.id = id;
 		this.name = name;
 		CPF = cpf;
@@ -37,7 +37,7 @@ public class User implements Serializable{
 		this.status = Status.OFFLINE;
 	}
 
-	public User(String id, String name, String cpf, Date date, String photo, String describle) {
+	public User(String id, String name, String cpf, Date date, Byte[] photo, String describle) {
 		this.id = id;
 		this.name = name;
 		CPF = cpf;
@@ -63,11 +63,11 @@ public class User implements Serializable{
 		this.date = date;
 	}
 
-	public String getPhoto() {
+	public Byte[] getPhoto() {
 		return photo;
 	}
 
-	public void setPhoto(String photo) {
+	public void setPhoto(Byte[] photo) {
 		this.photo = photo;
 	}
 
@@ -102,6 +102,15 @@ public class User implements Serializable{
 
 	public void setStatus(Status status) {
 		this.status = status;
+	}
+	
+	
+	public void updade(User user) {
+		this.name = user.name;
+		CPF = user.CPF;
+		this.date = user.date;
+		this.photo = user.photo;
+		this.describle = user.describle;
 	}
 
 	

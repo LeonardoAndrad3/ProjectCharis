@@ -6,8 +6,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
+import org.springframework.core.io.Resource;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DocumentReference;
+
+import com.charis.entities.dto.ImageDTO;
 
 import jakarta.persistence.Id;
 
@@ -22,7 +25,7 @@ public class Poster implements Serializable{
 	private User autor;
 	private String description;
 	private Date date;
-	private String photo;
+	private ImageDTO photo;
 
 	@DocumentReference
 	private List<Message> messages = new ArrayList<>();
@@ -30,7 +33,7 @@ public class Poster implements Serializable{
 	public Poster() {
 	}
 
-	public Poster(String id, User autor, String description, Date date, String photo) {
+	public Poster(String id, User autor, String description, Date date, ImageDTO photo) {
 		this.id = id;
 		this.autor = autor;
 		this.description = description;
@@ -46,12 +49,12 @@ public class Poster implements Serializable{
 		this.description = description;
 	}
 
-	public String getPhoto() {
+	public ImageDTO getPhoto() {
 		return photo;
 	}
 
-	public void setPhoto(String photo) {
-		this.photo = photo;
+	public void setPhoto(ImageDTO bs) {
+		this.photo = bs;
 	}
 
 	public List<Message> getMessages() {

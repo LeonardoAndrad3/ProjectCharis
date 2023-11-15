@@ -1,20 +1,25 @@
 package com.charis.services;
 
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.charis.entities.Message;
 import com.charis.entities.Poster;
+import com.charis.entities.dto.ImageDTO;
 import com.charis.repository.MessageRep;
 import com.charis.repository.PosterRep;
 import com.charis.services.exception.ObjectNotFoundException;
+import com.charis.storage.exception.StorageException;
+import com.charis.storage.service.SystemStorageService;
 
 @Service
-public class PosterService {
+public class PosterService implements BaseCrud<Poster>{
 	
 	@Autowired
 	private PosterRep rep;
@@ -22,48 +27,89 @@ public class PosterService {
 	@Autowired
 	private MessageRep repM;
 	
+	@Autowired
+	private SystemStorageService storageService;
+	
 	
 	public PosterService(PosterRep repo) {
 		this.rep = repo;
 	}
 
+	@Override
 	public List<Poster> findAll() {
 		return rep.findAll();
 	}	
 	
+	@Override
 	public Poster findById(String id) {
 		Optional<Poster> opt = rep.findById(id);
 		return opt.orElseThrow(() -> new ObjectNotFoundException("Id not found:" + id));
 	}
+		
+	@Override
+	public void update(Poster poster, String id) {
+		Poster p = findById(id);
+		p.update(poster);
+		rep.save(poster);
+	}
+	
+	@Override
+	public Poster insert(Poster poster) {
+		rep.save(poster);
+		return poster;
+	}
+	
+	@Override
+	public void deleteById(String id) {
+		Poster poster = findById(id);
+		rep.delete(poster);
+	}	
+	
+	@Override
+	public void deleteAll() {
+		rep.deleteAll();
+	}
+	
 	
 	public Message findMsgById(String id) {
 		Optional<Message> opt = repM.findById(id);
 		return opt.orElseThrow(() -> new ObjectNotFoundException("Id not found:" + id));
 	}
+
+	
+	public void uploadFoto(MultipartFile file, String id) {
 		
-	public Poster insert(@RequestBody Poster poster) {
-		rep.save(poster);
-		return poster;
-	}
-	
-	public Poster update(@RequestBody Poster poster, String id) {
+		Path newPhoto = storageService.insert(file).normalize();
 		Poster p = findById(id);
-		p.update(poster);
-		rep.save(poster);
-		return poster;
+		
+		p.setPhoto(new ImageDTO(
+				file.getOriginalFilename(), 
+				newPhoto.toString()));
+		
+		rep.save(p);
+		
+		System.out.println(p.getPhoto());
 	}
 	
-	public Poster delete(String id) {
-		Poster poster = findById(id);
-		rep.delete(poster);
-		return poster;
-	}	
+	public Resource getFoto(String id) {
+		
+		Poster p = findById(id);
 	
-	public Message insertMsg(@RequestBody Message msg, String id) {
+		if(p.getPhoto() != null)
+			return storageService.loadResource(p.getPhoto().getPath());
+		else
+			return storageService.loadResource("");	
+	}
+	
+
+	public Message insertMsg(Message msg, String id) {
 		System.out.println(msg);
 		Poster poster = findById(id);
 		msg.setIdPoster(poster.getId());
+		
 		Message newMsg = repM.save(msg);
+		
+		System.out.println(newMsg);
 		
 		if(msg.getIdPoster() == poster.getId()) {
 			poster.getMessages().add(newMsg);
@@ -73,4 +119,8 @@ public class PosterService {
 			throw new ObjectNotFoundException("Message not compatible id poster");
 
 	}
+
+
+
+	
 }

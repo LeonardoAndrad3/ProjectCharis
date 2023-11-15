@@ -81,5 +81,13 @@ public class Message implements Serializable {
 		Message other = (Message) obj;
 		return Objects.equals(id, other.id);
 	}
+
+	@Override
+	public String toString() {
+		return "Message [id=" + id + ", autor=" + autor + ", message=" + message + ", date=" + date + ", idPoster="
+				+ idPoster + "]";
+	}
+	
+	
 	
 }

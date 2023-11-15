@@ -33,12 +33,12 @@ public class Instantiation implements CommandLineRunner {
 		msgRep.deleteAll();
 		userRep.deleteAll();
 		
-		User u1 = new User(null,"Ivana","479.770.378-40", new Date(), "C:/");
-		User u2 = new User(null,"Leonardo","479.770.378-41", new Date(), "C:/leonardo");
+		User u1 = new User(null,"Ivana","479.770.378-40", new Date(), null);
+		User u2 = new User(null,"Leonardo","479.770.378-41", new Date(), null);
 		
 		userRep.saveAll(Arrays.asList(u1, u2));
 	
-		Poster p1 = new Poster(null,u1,"leonardo", new Date(), "C:/profissional");
+		Poster p1 = new Poster(null,u1,"leonardo", new Date(), null);
 		
 		posterRep.save(p1);
 		

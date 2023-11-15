@@ -1,9 +1,11 @@
-package com.charis.controllers;
+package com.charis.resources;
 
 import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,26 +15,29 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.charis.entities.Message;
 import com.charis.entities.Poster;
+import com.charis.entities.dto.ImageDTO;
 import com.charis.services.PosterService;
 
 @RestController
 @RequestMapping(value = "/poster")
-public class PosterController {
+public class PosterResource {
 	
 	
 	@Autowired
 	private PosterService service;
+
 	
-	public PosterController(PosterService repo) {
+	public PosterResource(PosterService repo) {
 		this.service = repo;
 	}
 	
-	@CrossOrigin(origins = "http://localhost:5000")
 	@GetMapping
 	public ResponseEntity<List<Poster>> all() {
 		return ResponseEntity.ok().body(service.findAll());
@@ -55,22 +60,38 @@ public class PosterController {
 		return ResponseEntity.created(uri).build();
 	}
 	
+	@PostMapping(value = {"/{id}"}, consumes = {"multipart/form-data"})
+	public ResponseEntity<Void> add(@RequestParam MultipartFile file, @RequestParam String id) {
+		service.uploadFoto(file, id);
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(file.getOriginalFilename()).toUri();
+		return ResponseEntity.created(uri).build();
+	}
+	
+	@GetMapping("/{id}/photo")
+	public ResponseEntity<Resource> getPhoto(@RequestParam String id){
+		Resource img = service.getFoto(id);
+		return ResponseEntity.ok().body(img);	
+	}
+	
 	@PostMapping("/{id}/message")
 	public ResponseEntity<Void> addMessage(@RequestBody Message msg, @PathVariable String id) {
+		
+		System.out.println(msg);
 		msg = service.insertMsg(msg, id);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}/message").buildAndExpand(msg.getId()).toUri();
 		return ResponseEntity.created(uri).build();
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Poster> update(@PathVariable String id, @RequestBody Poster poster){
-		poster = service.update(poster, id);
-		return ResponseEntity.ok().body(poster);
+	public ResponseEntity<Void> update(@PathVariable String id, @RequestBody Poster poster){
+		service.update(poster, id);
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(poster.getId()).toUri();
+		return ResponseEntity.created(uri).build();
 	}
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> remove(@PathVariable String id){
-		service.delete(id);
+		service.deleteById(id);
 		return ResponseEntity.noContent().build();
 	}
 	
