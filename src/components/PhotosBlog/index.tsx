@@ -14,52 +14,78 @@ import ivana from "@icons/initContent/iconContentFirst.png"
 import startFull from "@icons/iconBlog/Star 1.png"
 import startEmpty from "@icons/iconBlog/starEmpty.png"
 import whats from "@icons/iconBlog/image 30 (1).png"
-import { Commentary } from 'src/assets/Commentary';
+import { Message } from '@assets/Message';
 import { AxiosInstance } from 'axios';
 import { User } from '@assets/User';
 
-interface message{
-    autor:User,
-    comment: Commentary,
+interface getMessage{
+    idPoster: String;
+    id:String;
+    autor:{
+        id: String,
+        name: String,
+        CPF: String,
+        date: Date,
+        photo: any,
+        describle: String,
+        works: Array<String>,
+        status: String
+    }
+    message: String;
+    date: Date;
 }
 
-interface postMessage{
-    autor:User,
-    comment: Commentary,
+interface getPhoto{
+    name: String,
+    path: String
 }
 
-export default function Photos(props:{service:any, id:String, perfil:any, name:String, socket:AxiosInstance}) {
+export default function Photos(props:{id:String, name:String, photo:getPhoto , socket:AxiosInstance}) {
 
     const socket = props.socket
 
     const [star, setStar] = useState(false);
     const [value, setValue] = useState("");
-    const [poster, setPoster] = useState<Commentary | any>([]);
+    const [poster, setPoster] = useState<Message | any>([]);
+    const [user, setUser] = useState<User>();
 
+    socket.get("/users")
+    .then(data => {setUser(data.data[0])})
+    .catch((err)=>{})
+    
     let iconStar = document.getElementById(`${props.id}star`)
 
     const addComment = (e: React.FormEvent) => {
         e.preventDefault();
 
-        let newMessage:postMessage = {
-            autor: new User("", "Leonardo", "47977037840", new Date, "C:/test", "Sou cabeleleiro profissional", new Array<String>, "OFFLINE" ),
-            comment:new Commentary(props.id,"Annonimation", value, new Date())
-        }
+        console.log(value)
+
+        let newMessage:Message = 
+            new Message(
+            props.id,
+            user!,
+            value,
+            new Date().toISOString(),
+            ""
+        )
         
-        setPoster((current:any) => [...current, postMessage])
-
-        setValue("")
-
         socket.post(`/poster/${props.id}/message`,   
             {
+                idPoster: newMessage.idPoster,
                 autor: newMessage.autor,
-                comment: newMessage.comment
+                message: newMessage.message,
+                date: newMessage.date,               
             },
             {
             headers:{
                 "Content-Type": "application/json",
             }
         })
+
+        setPoster((current:any) => [...current, newMessage.element])
+
+        setValue("")
+        
     }
     
     
@@ -82,19 +108,23 @@ export default function Photos(props:{service:any, id:String, perfil:any, name:S
             },
         })
             .then((data) =>{setPoster(
-                data.data.map((data:message)=> {
+                data.data.map((data:Message)=> {
                     return(
-                        new Commentary(
-                            data.comment.idPoster,
-                            data.comment.autor, 
-                            data.comment.comment, 
-                            new Date(data.comment.date)
-                    ).element())}))
-                        }
-                )
-            }
-        t()
-        
+                            new Message(
+                                data.idPoster,
+                                data.autor,
+                                data.message,
+                                data.date.toString(),
+                                data.id
+                            ).element()
+                        )}))
+                    }
+                ).catch((err)=>{
+                    if(!err.response || err.code == 'ECONNABORTED'){
+
+                    }
+                })}
+        t()     
     },[socket, props.id])
 
     useEffect(()=>{
@@ -112,12 +142,12 @@ export default function Photos(props:{service:any, id:String, perfil:any, name:S
     return(
         <Main>
             <DivPerfil>
-                <img src={ivana} alt="" />
+                <img src={props.photo?.path.toString()!} alt="" />
                 <span>•</span>
                 <p>{props.name}</p>
             </DivPerfil>
             <DivPost>
-                <img src={ivana} alt="" />
+                <img src={props.photo?.path.toString()} alt="" />
             </DivPost>
 
             <DivOptions>

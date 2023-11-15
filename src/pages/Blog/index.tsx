@@ -5,7 +5,7 @@ import PhotosBlog from '@components/PhotosBlog';
 import w1 from "@icons/works/image 20.png"
 import w2 from "@icons/works/image 21.png"
 import w3 from "@icons/works/image 22.png"
-import { Commentary } from '../../assets/Commentary'
+import { Message } from '../../assets/Message'
 import mari from "@icons/mari.png"
 import ivana from "@icons/initContent/iconContentFirst.png"
 import victor from "@icons/victor.png"
@@ -25,8 +25,12 @@ interface test{
     },
     description: String,
     date: Date,
-    photo: any,
-    messages:Array<Commentary>
+    photo: {
+        id: String,
+        name: String,
+        path: String
+    },
+    messages:Array<Message>
 }
 
 
@@ -47,18 +51,20 @@ export default function Blog(){
             },
         })
         .then(({data}) => {
-            console.log(data)
             setHtml(data.map((poster:test)=> 
                 <PhotosBlog
-                    id={poster.id} 
-                    service={w1} 
-                    perfil={require(`../../${poster.photo}`)}
-                    name={poster.autor.name} 
+                    id={poster.id}
+                    name={poster.autor.name}
+                    photo={poster.photo}
                     socket = {instance}
                 />
             ))
         })
-        .catch((err) => console.log(err))
+        .catch((err) => {
+            if(!err.response){
+                
+            }
+        })
         }
 
         t()
