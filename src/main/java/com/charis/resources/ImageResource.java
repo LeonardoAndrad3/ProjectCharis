@@ -2,12 +2,7 @@ package com.charis.resources;
 
 import java.io.IOException;
 import java.net.URI;
-import java.sql.Blob;
-import java.sql.SQLException;
 import java.util.List;
-
-import javax.sql.rowset.serial.SerialBlob;
-import javax.sql.rowset.serial.SerialException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -32,13 +27,24 @@ public class ImageResource {
 	private ImageService service;
 	
 	
-	@GetMapping
+	@GetMapping("/search")
 	public ResponseEntity<List<Image>> findAll(){
 		
-
 			List<Image> bytes = service.findAll();
 					
 			return ResponseEntity.ok().body(bytes);
+	}
+
+	@GetMapping
+	public ResponseEntity<byte[]> findAllImage(){
+		
+		byte[] bytes = service.findAll()
+				.stream()
+				.map(img -> img.getImage())
+				.findFirst()
+				.orElseThrow(() -> new RuntimeException("Gol"));
+		
+		return ResponseEntity.ok().contentType(MediaType.IMAGE_PNG).body(bytes);
 	}
 	
 	@GetMapping("/{id}")
@@ -50,7 +56,7 @@ public class ImageResource {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Void> insert(@RequestParam MultipartFile file) throws IOException, SerialException, SQLException{
+	public ResponseEntity<Void> insert(@RequestParam MultipartFile file) throws IOException{
 		
 		byte[] bytes = file.getBytes();
 		
@@ -61,7 +67,6 @@ public class ImageResource {
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/").buildAndExpand(image.getId()).toUri();
 		
 		return ResponseEntity.created(uri).build();
-
 	}
 	
 	

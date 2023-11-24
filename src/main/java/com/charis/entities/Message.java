@@ -29,6 +29,14 @@ public class Message implements Serializable {
 		this.date = date;
 		this.idPoster = idPoster;
 	}
+	
+	public Message(User autor, String message, Date date, String idPoster) {
+		this.id = null;
+		this.autor = autor;
+		this.message = message;
+		this.date = date;
+		this.idPoster = idPoster;
+	}
 
 	public Message() {
 	}

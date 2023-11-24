@@ -4,10 +4,8 @@ import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +20,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.charis.entities.Message;
 import com.charis.entities.Poster;
-import com.charis.entities.dto.ImageDTO;
+import com.charis.entities.dto.MessageDTO;
 import com.charis.services.PosterService;
 
 @RestController
@@ -74,12 +72,10 @@ public class PosterResource {
 	}
 	
 	@PostMapping("/{id}/message")
-	public ResponseEntity<Void> addMessage(@RequestBody Message msg, @PathVariable String id) {
-		
-		System.out.println(msg);
-		msg = service.insertMsg(msg, id);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}/message").buildAndExpand(msg.getId()).toUri();
-		return ResponseEntity.created(uri).build();
+	public ResponseEntity<Message> addMessage(@RequestBody MessageDTO msg) {
+		Message message = service.insertMsg(msg);
+//		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}/message").buildAndExpand(msg.getId()).toUri();
+		return ResponseEntity.ok().body(message);
 	}
 	
 	@PutMapping("/{id}")

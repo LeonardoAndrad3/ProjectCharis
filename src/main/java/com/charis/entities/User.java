@@ -20,7 +20,8 @@ public class User implements Serializable{
 	private String name;
 	private String CPF;
 	private Date date;
-	private Byte[] photo;
+	private Image photo;
+	private Long telephone;
 	private String describle;
 	private List<String> works = new ArrayList<>();
 	private Status status;
@@ -28,16 +29,17 @@ public class User implements Serializable{
 	public User() {
 	}
 
-	public User(String id, String name, String cpf, Date date, Byte[] photo) {
+	public User(String id, String name, String cpf, Date date, Image photo,Long telephone) {
 		this.id = id;
 		this.name = name;
 		CPF = cpf;
 		this.date = date;
 		this.photo = photo;
 		this.status = Status.OFFLINE;
+		this.telephone = telephone;
 	}
 
-	public User(String id, String name, String cpf, Date date, Byte[] photo, String describle) {
+	public User(String id, String name, String cpf, Date date, Image photo, String describle) {
 		this.id = id;
 		this.name = name;
 		CPF = cpf;
@@ -45,6 +47,15 @@ public class User implements Serializable{
 		this.photo = photo;
 		this.describle = describle;
 		this.status = Status.OFFLINE;
+	}
+	
+	
+	public Long getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(Long telephone) {
+		this.telephone = telephone;
 	}
 
 	public String getName() {
@@ -63,11 +74,11 @@ public class User implements Serializable{
 		this.date = date;
 	}
 
-	public Byte[] getPhoto() {
+	public Image getPhoto() {
 		return photo;
 	}
 
-	public void setPhoto(Byte[] photo) {
+	public void setPhoto(Image photo) {
 		this.photo = photo;
 	}
 
@@ -113,6 +124,14 @@ public class User implements Serializable{
 		this.describle = user.describle;
 	}
 
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", CPF=" + CPF + ", date=" + date + ", photo=" + photo
+				+ ", telephone=" + telephone + ", describle=" + describle + ", works=" + works + ", status=" + status
+				+ "]";
+	}
+
+	
 	
 	
 	

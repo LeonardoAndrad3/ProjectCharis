@@ -11,11 +11,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.charis.entities.Message;
 import com.charis.entities.Poster;
+import com.charis.entities.User;
 import com.charis.entities.dto.ImageDTO;
+import com.charis.entities.dto.MessageDTO;
 import com.charis.repository.MessageRep;
 import com.charis.repository.PosterRep;
+import com.charis.repository.UserRep;
 import com.charis.services.exception.ObjectNotFoundException;
-import com.charis.storage.exception.StorageException;
 import com.charis.storage.service.SystemStorageService;
 
 @Service
@@ -26,6 +28,9 @@ public class PosterService implements BaseCrud<Poster>{
 	
 	@Autowired
 	private MessageRep repM;
+	
+	@Autowired
+	private UserService serviceUser;
 	
 	@Autowired
 	private SystemStorageService storageService;
@@ -102,12 +107,13 @@ public class PosterService implements BaseCrud<Poster>{
 	}
 	
 
-	public Message insertMsg(Message msg, String id) {
-		System.out.println(msg);
-		Poster poster = findById(id);
+	public Message insertMsg(MessageDTO msg) {
+		
+		User user = serviceUser.findById(msg.getIdAutor());
+		Poster poster = findById(msg.getIdPoster());
 		msg.setIdPoster(poster.getId());
 		
-		Message newMsg = repM.save(msg);
+		Message newMsg = repM.save(msg.newMessage(user));
 		
 		System.out.println(newMsg);
 		

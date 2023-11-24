@@ -29,7 +29,7 @@ public class ImageService implements BaseCrud<Image>{
 	@Override
 	public Image findById(String id) {
 		Optional<Image> opt = rep.findById(id);
-		return opt.orElseThrow(() -> new RuntimeException("Err"));
+		return opt.orElseThrow(() -> new RuntimeException("E"));
 	}
 
 	@Override

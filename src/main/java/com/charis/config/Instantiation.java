@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import com.charis.entities.Message;
 import com.charis.entities.Poster;
 import com.charis.entities.User;
+import com.charis.repository.ImagesRep;
 import com.charis.repository.MessageRep;
 import com.charis.repository.PosterRep;
 import com.charis.repository.UserRep;
@@ -25,6 +26,9 @@ public class Instantiation implements CommandLineRunner {
 	
 	@Autowired
 	private UserRep userRep;
+	
+	@Autowired
+	private ImagesRep ImageRep;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -32,9 +36,10 @@ public class Instantiation implements CommandLineRunner {
 		posterRep.deleteAll();
 		msgRep.deleteAll();
 		userRep.deleteAll();
+		ImageRep.deleteAll();
 		
-		User u1 = new User(null,"Ivana","479.770.378-40", new Date(), null);
-		User u2 = new User(null,"Leonardo","479.770.378-41", new Date(), null);
+		User u1 = new User(null,"Ivana","479.770.378-40", new Date(), null,11960122205l);
+		User u2 = new User(null,"Leonardo","479.770.378-41", new Date(), null,11960122205l);
 		
 		userRep.saveAll(Arrays.asList(u1, u2));
 	
