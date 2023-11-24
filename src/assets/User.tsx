@@ -5,6 +5,7 @@ class User{
     CPF: String;
     date: Date;
     photo: any;
+    number: number;
     describle: String;
     works: Array<String>;
     status: String;
@@ -17,7 +18,8 @@ class User{
         photo:any, 
         describle:String, 
         works:Array<String>, 
-        status:String
+        status:String,
+        number: number
     )
     {
         this.id = id;
@@ -28,6 +30,7 @@ class User{
         this.describle = describle;
         this.works = works;
         this.status = status;
+        this.number = number;
     }
 }
 

@@ -10,26 +10,19 @@ import mari from "@icons/mari.png"
 import ivana from "@icons/initContent/iconContentFirst.png"
 import victor from "@icons/victor.png"
 import axios, { AxiosInstance } from 'axios';
+import { User } from '@assets/User';
 
-interface test{
+
+interface poster{
     id:String,
-    autor:{
-        id: String,
-        name: String,
-        CPF: String,
-        date: Date,
-        photo: any,
-        describle: String,
-        works: Array<String>,
-        status: String
-    },
+    autor:User,
     description: String,
     date: Date,
-    photo: {
-        id: String,
-        name: String,
-        path: String
-    },
+    photo:{
+        date: Date,
+        image: String,
+        id: String
+    }
     messages:Array<Message>
 }
 
@@ -45,19 +38,20 @@ export default function Blog(){
     const [html, setHtml] = useState<Element[] | any>(<></>)
 
     useEffect(()=>{
-        const t = async() =>{instance.get("/poster", {
-            headers:{
-                'Content-Type': 'application/json',
-            },
-        })
+        const t = async() =>{instance.get("/poster")
         .then(({data}) => {
-            setHtml(data.map((poster:test)=> 
+            setHtml(data.map((poster:poster)=> (
                 <PhotosBlog
+                    key={`${poster.id}`}
                     id={poster.id}
-                    name={poster.autor.name}
+                    autor={poster.autor}
                     photo={poster.photo}
-                    socket = {instance}
+                    description={poster.description}
+                    date={poster.date}
+                    messages={poster.messages}
+
                 />
+            )
             ))
         })
         .catch((err) => {
@@ -68,8 +62,8 @@ export default function Blog(){
         }
 
         t()
-    },[instance])
 
+    },[])
 
     return(
         <Main>

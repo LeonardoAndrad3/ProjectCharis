@@ -17,6 +17,7 @@ module.exports = {
             '@icons': './src/icons',
             '@pages': "./src/pages",
             '@assets': "./src/assets",
+            '@config': "./src/config"
           },
         },
       ],

@@ -4,25 +4,16 @@ class Message{
 
     idPoster: String;
     id!: String;
-    autor:{
-        id: String,
-        name: String,
-        CPF: String,
-        date: Date,
-        photo: any,
-        describle: String,
-        works: Array<String>,
-        status: String
-    }
+    autor!:User;
     message: String;
     date: Date;
 
     constructor(idPoster: String, autor:User
-        ,message:String, date: String, id:String){
+        ,message:String, date: string, id:String){
         this.idPoster = idPoster;
-        this.autor = autor;
+        this.autor! = autor;
         this.message = message;
-        this.date = new Date(date.toString());
+        this.date = new Date(date);
         this.id = id;
     }
 
